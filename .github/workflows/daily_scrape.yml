@@ -23,7 +23,7 @@ jobs:
         pip install -r requirements.txt
     
     - name: Run data fetcher
-      run: python scrape_bidding.py
+      run: python fetch_bidding.py
     
     - name: Commit and push if changes
       run: |
