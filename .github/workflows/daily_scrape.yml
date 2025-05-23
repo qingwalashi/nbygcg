@@ -1,0 +1,33 @@
+name: Daily Data Fetcher
+
+on:
+  schedule:
+    - cron: '0 10 * * *'  # Runs at 18:00 UTC+8 (10:00 UTC)
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run data fetcher
+      run: python scrape_bidding.py
+    
+    - name: Commit and push if changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add date_prj.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update bidding data [skip ci]" && git push) 
