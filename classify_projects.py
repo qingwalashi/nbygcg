@@ -29,7 +29,9 @@ def classify_project(client, project_name):
 
     try:
         response = client.chat.completions.create(
-            model="Qwen/Qwen3-8B",
+            # model="Qwen/Qwen3-32B",
+            model="Qwen/Qwen2.5-72B-Instruct",
+            # model="Qwen/Qwen3-8B", #siliconflow 免费模型，准确率不够高
             messages=[
                 {"role": "system", "content": "You are a helpful assistant designed to output JSON."},
                 {"role": "user", "content": prompt}
