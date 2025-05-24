@@ -28,7 +28,8 @@ def fetch_bidding_info():
             filtered_projects.append({
                 "kbDate": datetime.fromisoformat(project["kbDate"]).strftime("%Y-%m-%d"),
                 "prjName": project["prjName"],
-                "bulletinId": project["bulletinId"]
+                "bulletinId": project["bulletinId"],
+                "prjType": "其他项目"
             })
 
     # 按开标日期升序排序

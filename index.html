@@ -28,6 +28,13 @@
       --font-size-lg: 16px;
       --font-size-xl: 20px;
       --transition: all 0.2s ease;
+      
+      /* Project type colors */
+      --color-type-construction: #00b8d9;
+      --color-type-service: #36b37e;
+      --color-type-purchase: #ff5630;
+      --color-type-other: #6554c0;
+      --color-type-info: #ffab00;
     }
 
     * {
@@ -65,16 +72,27 @@
 
     .filters {
       display: flex;
+      flex-direction: column;
       gap: var(--spacing-md);
       margin-bottom: var(--spacing-lg);
-      flex-wrap: wrap;
-      align-items: center;
+    }
+
+    .filter-section {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+      width: 100%;
+    }
+
+    .filter-section h3 {
+      font-size: var(--font-size-md);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-xs);
     }
 
     .search-container {
       position: relative;
-      flex-grow: 1;
-      max-width: 400px;
+      width: 100%;
     }
 
     .search-icon {
@@ -101,9 +119,110 @@
       box-shadow: 0 0 0 2px rgba(76, 154, 255, 0.3);
     }
 
+    .type-filters {
+      display: flex;
+      gap: var(--spacing-xs);
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .type-filter {
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--border-radius);
+      font-size: var(--font-size-md);
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      border: 1px solid var(--color-border);
+      background-color: var(--color-background);
+      transition: var(--transition);
+      height: 36px;
+      display: flex;
+      align-items: center;
+    }
+
+    .type-filter:hover {
+      opacity: 0.8;
+    }
+
+    .type-filter.active {
+      color: white;
+    }
+
+    .type-filter[data-type="all"] {
+      background-color: var(--color-background);
+      color: var(--color-text-primary);
+    }
+
+    .type-filter[data-type="all"].active {
+      background-color: var(--color-primary);
+      color: white;
+    }
+
+    .type-filter[data-type="信息化建设类项目"] {
+      background-color: var(--color-type-info);
+      color: white;
+    }
+
+    .type-filter[data-type="信息化服务类项目"] {
+      background-color: var(--color-type-service);
+      color: white;
+    }
+
+    .type-filter[data-type="信息化软硬件采购类项目"] {
+      background-color: var(--color-type-purchase);
+      color: white;
+    }
+
+    .type-filter[data-type="工程类项目"] {
+      background-color: var(--color-type-construction);
+      color: white;
+    }
+
+    .type-filter[data-type="其他项目"] {
+      background-color: var(--color-type-other);
+      color: white;
+    }
+
+    .project-type-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: var(--font-size-sm);
+      font-weight: 500;
+      margin-top: var(--spacing-xs);
+    }
+
+    .project-type-tag[data-type="信息化建设类项目"] {
+      background-color: var(--color-type-info);
+      color: white;
+    }
+
+    .project-type-tag[data-type="信息化服务类项目"] {
+      background-color: var(--color-type-service);
+      color: white;
+    }
+
+    .project-type-tag[data-type="信息化软硬件采购类项目"] {
+      background-color: var(--color-type-purchase);
+      color: white;
+    }
+
+    .project-type-tag[data-type="工程类项目"] {
+      background-color: var(--color-type-construction);
+      color: white;
+    }
+
+    .project-type-tag[data-type="其他项目"] {
+      background-color: var(--color-type-other);
+      color: white;
+    }
+
     .date-filters {
       display: flex;
       gap: var(--spacing-xs);
+      flex-wrap: wrap;
+      width: 100%;
       overflow-x: auto;
       padding-bottom: var(--spacing-xs);
     }
@@ -118,6 +237,9 @@
       border: 1px solid var(--color-border);
       background-color: var(--color-background);
       transition: var(--transition);
+      height: 36px;
+      display: flex;
+      align-items: center;
     }
 
     .date-filter:hover {
@@ -192,21 +314,38 @@
 
     @media (max-width: 768px) {
       .filters {
-        flex-direction: column;
-        align-items: flex-start;
+        gap: var(--spacing-md);
       }
 
       .search-container {
         width: 100%;
-        max-width: none;
       }
 
+      .type-filters,
       .date-filters {
         width: 100%;
+        overflow-x: auto;
+        padding-bottom: var(--spacing-xs);
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .type-filter,
+      .date-filter {
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        height: 32px;
       }
 
       .project-list {
         grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        padding: var(--spacing-sm);
+      }
+
+      .project-title {
+        font-size: var(--font-size-sm);
       }
     }
 
@@ -272,8 +411,23 @@
         <input type="search" id="projectSearch" placeholder="搜索项目..." />
       </div>
 
-      <div class="date-filters">
-        <button class="date-filter active" data-date="all">全部</button>
+      <div class="filter-section">
+        <h3>项目类型</h3>
+        <div class="type-filters">
+          <button class="type-filter active" data-type="all">全部</button>
+          <button class="type-filter" data-type="信息化建设类项目">信息化建设类项目</button>
+          <button class="type-filter" data-type="信息化服务类项目">信息化服务类项目</button>
+          <button class="type-filter" data-type="信息化软硬件采购类项目">信息化软硬件采购类项目</button>
+          <button class="type-filter" data-type="工程类项目">工程类项目</button>
+          <button class="type-filter" data-type="其他项目">其他项目</button>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h3>开标日期</h3>
+        <div class="date-filters">
+          <button class="date-filter active" data-date="all">全部</button>
+        </div>
       </div>
     </div>
 
@@ -301,6 +455,7 @@
         const projects = data.projects.map(item => ({
           date: item.kbDate,
           title: item.prjName,
+          type: item.prjType,
           url: "https://ygcg.nbcqjy.org/detail?bulletinId="+item.bulletinId
         }));
 
@@ -349,6 +504,7 @@
                 ${items.map(item => `
                   <div class="project-card" onclick="window.location.href='${item.url}'">
                     <div class="project-title">${item.title}</div>
+                    <div class="project-type-tag" data-type="${item.type}">${item.type}</div>
                   </div>
                 `).join('')}
               </div>
@@ -367,18 +523,22 @@
       }
 
       // 筛选功能
-      function filterProjects(searchTerm = '', selectedDate = 'all') {
+      function filterProjects(searchTerm = '', selectedDate = 'all', selectedType = 'all') {
         return projects.filter(project => {
           const matchSearch = project.title.includes(searchTerm);
           const matchDate = selectedDate === 'all' || project.date === selectedDate;
-          return matchSearch && matchDate;
+          const matchType = selectedType === 'all' || project.type === selectedType;
+          return matchSearch && matchDate && matchType;
         });
       }
 
       // 事件监听
       document.querySelector('#projectSearch').addEventListener('input', (e) => {
-        const filtered = filterProjects(e.target.value,
-          document.querySelector('.date-filter.active').dataset.date);
+        const filtered = filterProjects(
+          e.target.value,
+          document.querySelector('.date-filter.active').dataset.date,
+          document.querySelector('.type-filter.active').dataset.type
+        );
         renderProjects(filtered);
       });
 
@@ -388,7 +548,21 @@
           button.classList.add('active');
           const filtered = filterProjects(
             document.querySelector('#projectSearch').value,
-            button.dataset.date
+            button.dataset.date,
+            document.querySelector('.type-filter.active').dataset.type
+          );
+          renderProjects(filtered);
+        });
+      });
+
+      document.querySelectorAll('.type-filter').forEach(button => {
+        button.addEventListener('click', () => {
+          document.querySelectorAll('.type-filter').forEach(b => b.classList.remove('active'));
+          button.classList.add('active');
+          const filtered = filterProjects(
+            document.querySelector('#projectSearch').value,
+            document.querySelector('.date-filter.active').dataset.date,
+            button.dataset.type
           );
           renderProjects(filtered);
         });

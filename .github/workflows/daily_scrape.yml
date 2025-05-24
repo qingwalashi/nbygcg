@@ -25,6 +25,12 @@ jobs:
     - name: Run data fetcher
       run: python fetch_bidding.py
     
+    - name: Run project classifier
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+      run: python classify_projects.py
+    
     - name: Commit and push if changes
       run: |
         git config --local user.email "action@github.com"
