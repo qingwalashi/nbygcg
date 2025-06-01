@@ -36,4 +36,9 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add date_prj.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update bidding data [skip ci]" && git push) 
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update bidding data [skip ci]" && git push)
+    
+    - name: Run info push
+      env:
+        BARK_KEY: ${{ secrets.BARK_KEY }}
+      run: python nbygcg_info_push.py 
