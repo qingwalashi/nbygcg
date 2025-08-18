@@ -59,10 +59,10 @@ def generate_push_content(filtered_projects: Dict[str, List[Dict]]) -> str:
         if projects:  # 只显示有项目类型的项目
             content.append(f"### {pt}")
             for project in projects:
-                content.append(f"- {project['prjName']}")
+                # 为每个项目构建跳转链接
+                project_url = f"https://ygcg.nbcqjy.org/detail?bulletinId={project['bulletinId']}"
+                content.append(f"- [{project['prjName']}]({project_url})")
             content.append("")
-    
-    content.append("查看更多: https://nbygcg.qingwalashi.cn/")
     
     return "\n".join(content)
 
@@ -70,10 +70,9 @@ def generate_push_content(filtered_projects: Dict[str, List[Dict]]) -> str:
 def generate_sign(timestamp: int, secret: str) -> str:
     """生成钉钉加签"""
     string_to_sign = '{}\n{}'.format(timestamp, secret)
-    hmac_code = hmac.new(
-        string_to_sign.encode('utf-8'),
-        digestmod=hashlib.sha256
-    ).digest()
+    secret_enc = secret.encode('utf-8')
+    string_to_sign_enc = string_to_sign.encode('utf-8')
+    hmac_code = hmac.new(secret_enc, string_to_sign_enc, digestmod=hashlib.sha256).digest()
     sign = urllib.parse.quote_plus(base64.b64encode(hmac_code).decode('utf-8'))
     return sign
 

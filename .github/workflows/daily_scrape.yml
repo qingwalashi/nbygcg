@@ -2,7 +2,8 @@ name: Daily Data Fetcher
 
 on:
   schedule:
-    - cron: '0 10 * * *'  # Runs at 18:00 UTC+8 (10:00 UTC)
+    # Runs at 01:00 UTC, which is 9:00 AM in China Standard Time (UTC+8)
+    - cron: '0 1 * * *'  
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -38,7 +39,14 @@ jobs:
         git add date_prj.json
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update bidding data [skip ci]" && git push)
         
-    # - name: Run info push
+    - name: Run DingTalk info push
+      env:
+        DINGTALK_WEBHOOK_URL: ${{ secrets.DINGTALK_WEBHOOK_URL }}
+        DINGTALK_ACCESS_TOKEN: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
+        DINGTALK_SECRET: ${{ secrets.DINGTALK_SECRET }}
+      run: python nbygcg_info_ding_push.py
+    
+    # - name: Run Bark info push
     #   env:
     #     BARK_KEY: ${{ secrets.BARK_KEY }}
     #   run: python nbygcg_info_bark_push.py
