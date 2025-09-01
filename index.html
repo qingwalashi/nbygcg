@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>即将开标项目</title>
+  <title>阳光采购 - 信息看板</title>
   <style>
     :root {
       --color-primary: #0052cc;
@@ -57,6 +57,42 @@
       margin: 0 auto;
       padding: var(--spacing-md);
     }
+
+    /* Layout with sidebar */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: var(--spacing-lg);
+    }
+
+    .sidebar {
+      border-right: 1px solid var(--color-border);
+      padding-right: var(--spacing-lg);
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+
+    .menu-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--color-border);
+      background: var(--color-background);
+      color: var(--color-text-primary);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: left;
+      font-size: var(--font-size-md);
+    }
+
+    .menu-button:hover { background: var(--color-hover); }
+    .menu-button.active { border-color: var(--color-primary); box-shadow: var(--shadow-small); }
 
     header {
       padding: var(--spacing-lg) 0;
@@ -301,7 +337,7 @@
 
     .project-title {
       font-size: var(--font-size-md);
-      font-weight: 5 00;
+      font-weight: 500;
       margin-bottom: var(--spacing-xs);
     }
 
@@ -311,6 +347,152 @@
       color: var(--color-text-secondary);
       font-size: var(--font-size-lg);
     }
+
+    /* Bulletins styles */
+    #bulletinsContainer { display: none; }
+    
+    .bulletin-card {
+      padding: var(--spacing-md);
+      border-radius: var(--border-radius);
+      border: 1px solid var(--color-border);
+      transition: var(--transition);
+      background-color: var(--color-background);
+      box-shadow: var(--shadow-small);
+      margin-bottom: var(--spacing-md);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .bulletin-card:hover {
+      box-shadow: var(--shadow-medium);
+      border-color: var(--color-primary-light);
+    }
+    
+    .bulletin-title {
+      font-size: var(--font-size-md);
+      font-weight: 500;
+      margin-bottom: var(--spacing-xs);
+      color: var(--color-text-primary);
+    }
+    
+    .bulletin-no {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .bulletin-meta { /* 复用容器，放置“类型彩色标签”与“时间行”整体 */
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .bulletin-type-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .bulletin-times {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .bulletin-meta .tag {
+      background: var(--color-background-secondary);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+    
+    .bulletin-content { flex: 1; }
+    .bulletin-actions {
+      margin-top: var(--spacing-sm);
+      border-top: 1px solid var(--color-border);
+      padding-top: var(--spacing-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* 左侧：查看详情；右侧：查看原文 */
+    }
+    
+    .linklike {
+      color: var(--color-primary);
+      cursor: pointer;
+      font-size: var(--font-size-sm);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .linklike:hover {
+      color: var(--color-primary-light);
+    }
+    
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal {
+      width: min(900px, 94vw);
+      max-height: 84vh;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      display: none;
+      flex-direction: column;
+      z-index: 1001;
+      overflow: hidden;
+      transform: translateY(6px) scale(0.98);
+      opacity: 0;
+      transition: transform .18s ease, opacity .18s ease;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .modal-title { font-weight: 600; font-size: 16px; }
+    .modal-close {
+      background: #f5f6f7;
+      border: 1px solid var(--color-border);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--color-text-secondary);
+      transition: background .15s ease, color .15s ease, transform .06s ease;
+    }
+    .modal-close:hover { background: var(--color-hover); color: var(--color-text-primary); }
+    .modal-close:active { transform: scale(0.96); }
+    .modal-body {
+      padding: 18px 20px 22px;
+      overflow: auto;
+      line-height: 1.7;
+    }
+    /* Modal content typography */
+    .modal-body p { margin: 8px 0; }
+    .modal-body b, .modal-body strong { color: var(--color-text-primary); }
+    .modal-body table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    .modal-body td, .modal-body th { border: 1px solid var(--color-border); padding: 6px 8px; font-size: 13px; }
+    .modal-body ul, .modal-body ol { padding-left: 20px; }
 
     @media (max-width: 768px) {
       .filters {
@@ -397,54 +579,103 @@
       <h1 id="headerTitle">即将开标项目</h1>
     </header>
 
-    <div class="filters">
-      <div class="search-container">
-        <div class="search-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M7.25 12.5C10.1495 12.5 12.5 10.1495 12.5 7.25C12.5 4.35051 10.1495 2 7.25 2C4.35051 2 2 4.35051 2 7.25C2 10.1495 4.35051 12.5 7.25 12.5Z"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M10.9624 10.9625L13.9999 14.0001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="menu">
+          <button id="menuOpening" class="menu-button active">近期开标</button>
+          <button id="menuBulletins" class="menu-button">最新公告</button>
         </div>
-        <input type="search" id="projectSearch" placeholder="搜索项目..." />
-      </div>
+      </aside>
 
-      <div class="filter-section">
-        <h3>项目类型</h3>
-        <div class="type-filters">
-          <button class="type-filter active" data-type="all">全部</button>
-          <button class="type-filter" data-type="信息化建设类项目">信息化建设类项目</button>
-          <button class="type-filter" data-type="信息化服务类项目">信息化服务类项目</button>
-          <button class="type-filter" data-type="信息化软硬件采购类项目">信息化软硬件采购类项目</button>
-          <button class="type-filter" data-type="工程类项目">工程类项目</button>
-          <button class="type-filter" data-type="其他项目">其他项目</button>
-        </div>
-      </div>
+      <main class="main">
+        <div class="filters" id="filtersOpening">
+          <div class="search-container">
+            <div class="search-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7.25 12.5C10.1495 12.5 12.5 10.1495 12.5 7.25C12.5 4.35051 10.1495 2 7.25 2C4.35051 2 2 4.35051 2 7.25C2 10.1495 4.35051 12.5 7.25 12.5Z"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10.9624 10.9625L13.9999 14.0001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <input type="search" id="projectSearch" placeholder="搜索项目..." />
+          </div>
 
-      <div class="filter-section">
-        <h3>开标日期</h3>
-        <div class="date-filters">
-          <button class="date-filter active" data-date="all">全部</button>
+          <div class="filter-section">
+            <h3>项目类型</h3>
+            <div class="type-filters">
+              <button class="type-filter active" data-type="all">全部</button>
+              <button class="type-filter" data-type="信息化建设类项目">信息化建设类项目</button>
+              <button class="type-filter" data-type="信息化服务类项目">信息化服务类项目</button>
+              <button class="type-filter" data-type="信息化软硬件采购类项目">信息化软硬件采购类项目</button>
+              <button class="type-filter" data-type="工程类项目">工程类项目</button>
+              <button class="type-filter" data-type="其他项目">其他项目</button>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h3>开标日期</h3>
+            <div class="date-filters">
+              <button class="date-filter active" data-date="all">全部</button>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <div id="projectContainer"></div>
+
+        <!-- 最新公告视图 -->
+        <div id="bulletinsContainer">
+          <div class="filters" id="filtersBulletins" style="margin-bottom: 16px;">
+            <div class="search-container">
+              <div class="search-icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7.25 12.5C10.1495 12.5 12.5 10.1495 12.5 7.25C12.5 4.35051 10.1495 2 7.25 2C4.35051 2 2 4.35051 2 7.25C2 10.1495 4.35051 12.5 7.25 12.5Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M10.9624 10.9625L13.9999 14.0001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <input type="search" id="bulletinSearch" placeholder="搜索公告标题/编号/类型..." />
+            </div>
+
+            <div class="filter-section">
+              <h3>项目类型</h3>
+              <div class="type-filters" id="bulletinsTypeFilters">
+                <button class="type-filter active" data-type="all">全部</button>
+                <button class="type-filter" data-type="信息化建设类项目">信息化建设类项目</button>
+                <button class="type-filter" data-type="信息化服务类项目">信息化服务类项目</button>
+                <button class="type-filter" data-type="信息化软硬件采购类项目">信息化软硬件采购类项目</button>
+                <button class="type-filter" data-type="工程类项目">工程类项目</button>
+                <button class="type-filter" data-type="其他项目">其他项目</button>
+              </div>
+            </div>
+
+            <div class="filter-section">
+              <h3>发布时间</h3>
+              <div class="date-filters" id="bulletinsPublishFilters">
+                <button class="date-filter active" data-date="all">全部</button>
+              </div>
+            </div>
+
+            <div class="filter-section">
+              <h3>截止时间</h3>
+              <div class="date-filters" id="bulletinsEndFilters">
+                <button class="date-filter active" data-date="all">全部</button>
+              </div>
+            </div>
+          </div>
+          <div id="bulletinsList" class="project-list"></div>
+        </div>
+      </main>
     </div>
-
-    <div id="projectContainer"></div>
   </div>
 
-  <button class="back-to-top" id="backToTop">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 3.33334L8 12.6667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M3.33331 8.00001L7.99998 3.33334L12.6666 8.00001" stroke="white" stroke-width="2" stroke-linecap="round"
-        stroke-linejoin="round" />
-    </svg>
-  </button>
-
   <script>
-    // 动态加载JSON数据
-    fetch('date_prj.json')
+    document.addEventListener('DOMContentLoaded', () => {
+    // 动态加载JSON数据（近期开标）
+    fetch('opening_projects.json')
       .then(response => response.json())
       .then(data => {
         // 更新页面标题
@@ -461,7 +692,7 @@
 
         // 生成日期筛选按钮
         const dateFilterContainer = document.querySelector('.date-filters');
-        dateFilterContainer.innerHTML = ''; // 清空原有按钮
+        dateFilterContainer.innerHTML = '';
 
         // 添加"全部"按钮
         dateFilterContainer.innerHTML += `
@@ -572,8 +803,228 @@
       renderProjects(projects);
     }
 
-    // 回到顶部功能
+    // ============== 最新公告：加载与渲染 ==============
+    let bulletins = [];
+    let bulletinsLoaded = false;
+
+    // 日期格式化辅助
+    function fmtDate(d) {
+      if (!d) return '';
+      // 仅日期：期望 YYYY-MM-DD
+      try {
+        // 兼容 'YYYY/MM/DD'
+        const s = String(d).replaceAll('/', '-').slice(0, 10);
+        const [y, m, da] = s.split('-');
+        if (y && m && da) return `${y.padStart(4,'0')}-${m.padStart(2,'0')}-${da.padStart(2,'0')}`;
+      } catch {}
+      return String(d);
+    }
+
+    function fmtDateTime(dt) {
+      if (!dt) return '';
+      // 期望 ISO: YYYY-MM-DDTHH:MM:SS -> YYYY-MM-DD HH:MM
+      try {
+        const s = String(dt).replace(' ', 'T').replaceAll('/', '-');
+        const [datePart, timePart = ''] = s.split('T');
+        const time = timePart ? timePart.slice(0,5) : '';
+        return time ? `${fmtDate(datePart)} ${time}` : fmtDate(datePart);
+      } catch {}
+      return String(dt);
+    }
+
+    function renderBulletins(list) {
+      const container = document.getElementById('bulletinsList');
+      if (!list || list.length === 0) {
+        container.innerHTML = bulletinsLoaded ? '<div class="no-results">暂无公告</div>' : '<div class="no-results">正在加载公告数据...</div>';
+        return;
+      }
+      const html = list.map(b => {
+        const safeTitle = b.bulletinTitle || '无标题';
+        const noLine = b.prjNo ? `<div class="bulletin-no">项目编号：${b.prjNo}</div>` : '';
+        const typeTag = b.prjType ? `<span class="project-type-tag" data-type="${b.prjType}">${b.prjType}</span>` : '';
+        const publishDate = b.publishDate ? `<span class="tag">发布：${fmtDate(b.publishDate)}</span>` : '';
+        const endDate = b.endDate ? `<span class="tag">截止：${fmtDateTime(b.endDate)}</span>` : '';
+        const kbDate = b.kbDate ? `<span class="tag">开标：${fmtDateTime(b.kbDate)}</span>` : '';
+        const content = b.bulletinContent ? b.bulletinContent : '暂无详细内容';
+        const originalUrl = b.bulletinId ? `https://ygcg.nbcqjy.org/detail?bulletinId=${b.bulletinId}` : '';
+        return `
+          <div class="bulletin-card">
+            <div class="bulletin-content">
+              ${noLine}
+              <div class="bulletin-title">${safeTitle}</div>
+              <div class="bulletin-meta">
+                <div class="bulletin-type-row">${typeTag}</div>
+                <div class="bulletin-times">${publishDate}${endDate}${kbDate}</div>
+              </div>
+            </div>
+            <div class="bulletin-actions">
+              <span class="linklike bulletin-detail" data-title="${safeTitle.replace(/"/g,'&quot;')}" data-content="${content.replace(/"/g,'&quot;')}">查看详情</span>
+              ${originalUrl ? `<a class="linklike" href="${originalUrl}" target="_blank" rel="noopener noreferrer">查看原文</a>` : '<span style="color:#999;font-size:12px;">无原文链接</span>'}
+            </div>
+          </div>
+        `;
+      }).join('');
+      document.getElementById('bulletinsList').innerHTML = html;
+      // 绑定弹窗打开
+      document.querySelectorAll('.bulletin-detail').forEach(el => {
+        el.addEventListener('click', () => {
+          openModal(el.dataset.title || '公告详情', el.dataset.content || '');
+        });
+      });
+    }
+
+    // 公告筛选状态
+    let bulletinKeyword = '';
+    let bulletinType = 'all';
+    let bulletinPublishDate = 'all';
+    let bulletinEndDate = 'all';
+
+    function datePart(d) {
+      if (!d) return '';
+      try {
+        const s = String(d).replace(' ', 'T').replaceAll('/', '-');
+        return s.split('T')[0].slice(0,10);
+      } catch { return ''; }
+    }
+
+    function applyBulletinFilters() {
+      const t = (bulletinKeyword || '').trim();
+      const list = bulletins.filter(b => {
+        const title = (b.bulletinTitle || '');
+        const no = (b.prjNo || '');
+        const type = (b.prjType || '');
+        const pub = datePart(b.publishDate);
+        const end = datePart(b.endDate);
+        const matchKeyword = !t || title.includes(t) || no.includes(t) || type.includes(t) || pub.includes(t) || end.includes(t);
+        const matchType = bulletinType === 'all' || type === bulletinType;
+        const matchPub = bulletinPublishDate === 'all' || pub === bulletinPublishDate;
+        const matchEnd = bulletinEndDate === 'all' || end === bulletinEndDate;
+        return matchKeyword && matchType && matchPub && matchEnd;
+      });
+      renderBulletins(list);
+    }
+
+    // 预加载公告数据
+    document.getElementById('bulletinsList').innerHTML = '<div class="no-results">正在加载公告数据...</div>';
+    
+    fetch('purchase_bulletins.json')
+      .then(r => {
+        console.log('公告数据响应状态:', r.status);
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then(data => {
+        console.log('公告数据加载成功，条目数:', data ? data.length : 0);
+        bulletins = Array.isArray(data) ? data : [];
+        bulletinsLoaded = true;
+        console.log('处理后的公告数组长度:', bulletins.length);
+        if (bulletins.length > 0) {
+          console.log('第一条公告示例:', bulletins[0]);
+        }
+        buildBulletinFilters();
+        applyBulletinFilters();
+      })
+      .catch(err => {
+        console.error('公告数据加载失败:', err);
+        bulletinsLoaded = true;
+        document.getElementById('bulletinsList').innerHTML = '<div class="no-results">公告数据加载失败: ' + err.message + '</div>';
+      });
+
+    // 公告搜索
+    document.addEventListener('input', (e) => {
+      if (e.target && e.target.id === 'bulletinSearch') {
+        bulletinKeyword = e.target.value || '';
+        applyBulletinFilters();
+      }
+    });
+
+    function buildButtons(container, values, onClick) {
+      container.innerHTML = '';
+      const allBtn = document.createElement('button');
+      allBtn.className = 'date-filter active';
+      allBtn.dataset.date = 'all';
+      allBtn.textContent = '全部';
+      container.appendChild(allBtn);
+      values.forEach(v => {
+        const btn = document.createElement('button');
+        btn.className = 'date-filter';
+        btn.dataset.date = v;
+        const d = new Date(v);
+        btn.textContent = `${d.getMonth()+1}月${d.getDate()}日`;
+        container.appendChild(btn);
+      });
+      container.querySelectorAll('.date-filter').forEach(btn => {
+        btn.addEventListener('click', () => {
+          container.querySelectorAll('.date-filter').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          onClick(btn.dataset.date);
+          applyBulletinFilters();
+        });
+      });
+    }
+
+    function buildBulletinFilters() {
+      // 项目类型点击
+      const typeBox = document.getElementById('bulletinsTypeFilters');
+      if (typeBox) {
+        typeBox.querySelectorAll('.type-filter').forEach(btn => {
+          btn.addEventListener('click', () => {
+            typeBox.querySelectorAll('.type-filter').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            bulletinType = btn.dataset.type || 'all';
+            applyBulletinFilters();
+          });
+        });
+      }
+      // 构建“发布时间”按钮
+      const pubBox = document.getElementById('bulletinsPublishFilters');
+      if (pubBox) {
+        const pubs = Array.from(new Set(bulletins.map(b => datePart(b.publishDate)).filter(Boolean))).sort();
+        buildButtons(pubBox, pubs, (v) => { bulletinPublishDate = v; });
+      }
+      // 构建“截止时间”按钮（按日期部分）
+      const endBox = document.getElementById('bulletinsEndFilters');
+      if (endBox) {
+        const ends = Array.from(new Set(bulletins.map(b => datePart(b.endDate)).filter(Boolean))).sort();
+        buildButtons(endBox, ends, (v) => { bulletinEndDate = v; });
+      }
+    }
+
+    // ============== 菜单切换与回到顶部 ==============
+    const menuOpening = document.getElementById('menuOpening');
+    const menuBulletins = document.getElementById('menuBulletins');
+    const filtersOpening = document.getElementById('filtersOpening');
+    const bulletinsContainer = document.getElementById('bulletinsContainer');
     const backToTopButton = document.getElementById('backToTop');
+
+    function switchTo(view) {
+      if (view === 'opening') {
+        menuOpening.classList.add('active');
+        menuBulletins.classList.remove('active');
+        document.getElementById('headerTitle').textContent = '即将开标项目';
+        filtersOpening.style.display = '';
+        document.getElementById('projectContainer').style.display = '';
+        bulletinsContainer.style.display = 'none';
+        window.scrollTo({ top: 0 });
+      } else {
+        menuBulletins.classList.add('active');
+        menuOpening.classList.remove('active');
+        document.getElementById('headerTitle').textContent = '最新公告';
+        filtersOpening.style.display = 'none';
+        document.getElementById('projectContainer').style.display = 'none';
+        bulletinsContainer.style.display = 'block';
+        window.scrollTo({ top: 0 });
+        // 确保公告数据已渲染
+        if (bulletinsLoaded && bulletins.length > 0) {
+          renderBulletins(bulletins);
+        }
+      }
+    }
+
+    menuOpening.addEventListener('click', () => switchTo('opening'));
+    menuBulletins.addEventListener('click', () => switchTo('bulletins'));
+
+    // 回到顶部功能
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
         backToTopButton.classList.add('visible');
@@ -588,7 +1039,68 @@
         behavior: 'smooth'
       });
     });
+
+    // ============== 公告详情弹窗 ==============
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    const modalClose = document.getElementById('modalClose');
+
+    function openModal(title, html) {
+      modalTitle.textContent = title || '详情';
+      modalBody.innerHTML = html || '';
+      modalOverlay.style.display = 'flex';
+      // 初始状态（确保可见但透明，用于过渡）
+      modal.style.display = 'flex';
+      modal.style.transform = 'translateY(6px) scale(0.98)';
+      modal.style.opacity = '0';
+      document.body.style.overflow = 'hidden';
+      // 下一帧启动过渡到可见状态
+      requestAnimationFrame(() => {
+        modal.style.transform = 'translateY(0) scale(1)';
+        modal.style.opacity = '1';
+      });
+    }
+    function closeModal() {
+      // 过渡到隐藏状态
+      modal.style.transform = 'translateY(6px) scale(0.98)';
+      modal.style.opacity = '0';
+      document.body.style.overflow = '';
+      // 等待过渡结束再真正隐藏节点
+      setTimeout(() => {
+        modalOverlay.style.display = 'none';
+        modal.style.display = 'none';
+      }, 200);
+    }
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+    modalClose.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+    });
   </script>
+
+  <!-- 公告详情弹窗结构 -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">公告详情</div>
+        <button class="modal-close" id="modalClose" aria-label="关闭">×</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTop">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 3.33334L8 12.6667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M3.33331 8.00001L7.99998 3.33334L12.6666 8.00001" stroke="white" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
 </body>
 
 </html>

@@ -1,10 +1,11 @@
 # 阳光采购平台数据获取工具
 
-这个项目是一个自动化工具，用于从阳光采购平台获取未来三天的招标信息，并使用 AI 模型对项目进行分类。
+这个项目是一个自动化工具，用于从阳光采购平台获取未来三天的招标信息与最新采购公告，并使用 AI 模型对项目进行分类；同时提供本地前端看板（`index.html`）用于可视化查看与筛选。
 
 ## 功能特点
 
 - 自动获取未来三天的招标信息
+- 自动获取最近的采购公告（并标准化关键字段）
 - 使用 AI 模型对项目进行智能分类
 - 数据以 JSON 格式保存
 - 支持自动定时执行
@@ -21,10 +22,15 @@
 ```
 .
 ├── .github/workflows/    # GitHub Actions 工作流配置
-├── fetch_bidding.py      # 数据获取程序
+├── fetch_opening_projects.py      # 获取近期开标数据
+├── fetch_purchase_bulletins.py    # 获取最新采购公告
 ├── classify_projects.py  # 项目分类程序
+├── ding_push_opening_projects.py  # 钉钉推送（明日开标）
+├── bark_push_opening_projects.py  # Bark 推送（信息化项目汇总，可选）
+├── index.html                     # 本地可视化看板（近期开标 / 最新公告）
 ├── requirements.txt      # 项目依赖
-└── date_prj.json        # 生成的招标数据
+├── opening_projects.json          # 生成的招标数据
+└── purchase_bulletins.json        # 生成的采购公告数据
 ```
 
 ## 安装
@@ -46,17 +52,30 @@ pip install -r requirements.txt
 
 1. 首先获取数据：
 ```bash
-python fetch_bidding.py
+python fetch_opening_projects.py
+python fetch_purchase_bulletins.py
 ```
 
-2. 然后对项目进行分类：
+2. 然后对项目/公告进行分类（会更新两个 JSON 中的 `prjType` 字段）：
 ```bash
 python classify_projects.py
 ```
 
+3. 本地查看前端看板（推荐使用本地 HTTP 服务，以便浏览器能加载 JSON 文件）：
+```bash
+# 在项目根目录启动简易服务（默认 8000 端口）
+python -m http.server 8000
+# 浏览器打开
+# http://localhost:8000/index.html
+```
+
 ### 自动运行（GitHub Actions）
 
-项目配置了 GitHub Actions，每天下午 18:00 自动执行数据获取和分类任务。你也可以在 GitHub 仓库的 Actions 页面手动触发执行。
+项目配置了 GitHub Actions，每天定时自动执行：
+- 抓取近期开标与最新采购公告
+- 运行分类脚本并更新 `opening_projects.json`、`purchase_bulletins.json`
+- 提交改动并进行钉钉推送（开标信息）
+你也可以在 GitHub 仓库的 Actions 页面手动触发执行。
 
 #### 配置 GitHub Actions Secrets
 
@@ -73,6 +92,10 @@ python classify_projects.py
      
    - 名称：`OPENAI_BASE_URL`
      值：`https://api.siliconflow.cn/v1`
+
+   - 名称：`DINGTALK_WEBHOOK_URL`（用于钉钉推送开标信息）
+   - 名称：`DINGTALK_ACCESS_TOKEN`
+   - 名称：`DINGTALK_SECRET`
 
 #### 本地开发配置
 
@@ -101,9 +124,10 @@ cat .gitignore | grep .env
 4. 本地测试运行：
 ```bash
 # 获取数据
-python fetch_bidding.py
+python fetch_opening_projects.py
+python fetch_purchase_bulletins.py
 
-# 分类项目
+# 分类项目/公告
 python classify_projects.py
 ```
 
@@ -117,7 +141,7 @@ python classify_projects.py
 
 ## 输出数据格式
 
-生成的 `date_prj.json` 文件格式如下：
+生成的 `opening_projects.json` 文件格式如下：
 
 ```json
 {
@@ -132,6 +156,24 @@ python classify_projects.py
         }
     ]
 }
+```
+
+生成的 `purchase_bulletins.json` 文件格式如下（数组）：
+
+```json
+[
+  {
+    "prjTypeId": "02",
+    "publishDate": "YYYY-MM-DD",
+    "bulletinTitle": "公告标题",
+    "bulletinContent": "公告HTML内容（可能较长）",
+    "endDate": "YYYY-MM-DDTHH:MM:SS",
+    "prjNo": "项目编号",
+    "kbDate": "YYYY-MM-DDTHH:MM:SS",
+    "bulletinId": "原站点的autoId/id/bulletinId（字符串化）",
+    "prjType": "项目类型（分类后写入）"
+  }
+]
 ```
 
 ## 注意事项

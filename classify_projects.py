@@ -9,10 +9,10 @@ load_dotenv()
 
 def load_projects():
     try:
-        with open('date_prj.json', 'r', encoding='utf-8') as file:
+        with open('opening_projects.json', 'r', encoding='utf-8') as file:
             return json.load(file)
     except FileNotFoundError:
-        print("Error: date_prj.json not found")
+        print("Error: opening_projects.json not found")
         return None
 
 def classify_project(client, project_name):
@@ -50,7 +50,20 @@ def update_projects(original_data, classifications):
             project["prjType"] = classifications[bulletin_id]
 
 def save_projects(data):
-    with open('date_prj.json', 'w', encoding='utf-8') as file:
+    with open('opening_projects.json', 'w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
+
+# ========== 新增：采购公告（purchase_bulletins.json）读写 ==========
+def load_purchase_bulletins():
+    try:
+        with open('purchase_bulletins.json', 'r', encoding='utf-8') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print("Error: purchase_bulletins.json not found")
+        return None
+
+def save_purchase_bulletins(data):
+    with open('purchase_bulletins.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
 
 def main():
@@ -69,29 +82,57 @@ def main():
         base_url=base_url
     )
 
-    # 加载项目数据
+    # ================= 处理开标项目（opening_projects.json） =================
+    # 说明：
+    # - 输入文件：opening_projects.json
+    # - 数据结构：{"projects": [{"prjName": str, "bulletinId": str, "prjType": str, ...}, ...]}
+    # - 分类依据：对每个项目的 prjName 进行大模型分类（classify_project）
+    # - 输出效果：将分类结果写入对应项目对象的 prjType 字段
+    # - 容错与降级：
+    #   * 若文件缺失或解析失败：跳过该段处理，不影响后续采购公告处理
+    #   * 若单次 API 调用异常：返回 {"prjType": "其他项目"} 作为回退
+    # - 限频处理：每次请求后 sleep(1) 以降低触发限频的概率
     data = load_projects()
-    if not data:
-        return
+    if data:
+        classifications = {}
+        for project in data["projects"]:
+            print(f"\n正在分类开标项目: {project['prjName']}")
+            result = classify_project(client, project['prjName'])
+            classifications[project['bulletinId']] = result['prjType']
+            print(f"分类结果: {result['prjType']}")
+            time.sleep(1)
+        update_projects(data, classifications)
+        save_projects(data)
+        print("开标项目分类完成并已更新到 opening_projects.json")
+    else:
+        print("跳过开标项目分类：opening_projects.json 不存在或读取失败")
 
-    # 存储分类结果
-    classifications = {}
-    
-    # 对每个项目进行分类
-    for project in data["projects"]:
-        print(f"\n正在分类项目: {project['prjName']}")
-        result = classify_project(client, project['prjName'])
-        classifications[project['bulletinId']] = result['prjType']
-        print(f"分类结果: {result['prjType']}")
-        # 添加延时以避免API限制
-        time.sleep(1)
-
-    # 更新项目数据
-    update_projects(data, classifications)
-    
-    # 保存更新后的数据
-    save_projects(data)
-    print("项目分类完成并已更新到date_prj.json")
+    # ================= 处理采购公告（purchase_bulletins.json） =================
+    # 说明：
+    # - 输入文件：purchase_bulletins.json
+    # - 数据结构：[ {"bulletinTitle": str, "prjType": str, ...}, ... ]（顶层为数组）
+    # - 分类依据：对每条公告的 bulletinTitle 进行大模型分类（classify_project）
+    # - 输出效果：将分类结果写入每条公告对象的 prjType 字段
+    # - 容错与降级：
+    #   * 若文件缺失或解析失败：跳过该段处理
+    #   * 若某条公告无标题：跳过该条
+    #   * 若单次 API 调用异常：将 prjType 置为“其他项目”
+    # - 限频处理：每次请求后 sleep(1) 以降低触发限频的概率
+    purchase_data = load_purchase_bulletins()
+    if purchase_data:
+        for bulletin in purchase_data:
+            title = bulletin.get('bulletinTitle') or ''
+            if not title:
+                continue
+            print(f"\n正在分类采购公告: {title}")
+            result = classify_project(client, title)
+            bulletin['prjType'] = result.get('prjType', '其他项目')
+            print(f"分类结果: {bulletin['prjType']}")
+            time.sleep(1)
+        save_purchase_bulletins(purchase_data)
+        print("采购公告分类完成并已更新到 purchase_bulletins.json")
+    else:
+        print("跳过采购公告分类：purchase_bulletins.json 不存在或读取失败")
 
 if __name__ == "__main__":
-    main() 
+    main()

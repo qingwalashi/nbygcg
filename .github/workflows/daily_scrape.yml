@@ -23,8 +23,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    - name: Run data fetcher
-      run: python fetch_bidding.py
+    - name: Fetch opening projects
+      run: python fetch_opening_projects.py
+
+    - name: Fetch purchase bulletins
+      run: python fetch_purchase_bulletins.py
     
     - name: Run project classifier
       env:
@@ -36,17 +39,17 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add date_prj.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update bidding data [skip ci]" && git push)
+        git add opening_projects.json purchase_bulletins.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update opening & purchase bulletins data [skip ci]" && git push)
         
     - name: Run DingTalk info push
       env:
         DINGTALK_WEBHOOK_URL: ${{ secrets.DINGTALK_WEBHOOK_URL }}
         DINGTALK_ACCESS_TOKEN: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
         DINGTALK_SECRET: ${{ secrets.DINGTALK_SECRET }}
-      run: python nbygcg_info_ding_push.py
+      run: python ding_push_opening_projects.py
     
     # - name: Run Bark info push
     #   env:
     #     BARK_KEY: ${{ secrets.BARK_KEY }}
-    #   run: python nbygcg_info_bark_push.py
+    #   run: python bark_push_opening_projects.py
