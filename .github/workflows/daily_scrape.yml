@@ -47,7 +47,7 @@ jobs:
         DINGTALK_WEBHOOK_URL: ${{ secrets.DINGTALK_WEBHOOK_URL }}
         DINGTALK_ACCESS_TOKEN: ${{ secrets.DINGTALK_ACCESS_TOKEN }}
         DINGTALK_SECRET: ${{ secrets.DINGTALK_SECRET }}
-      run: python ding_push_opening_projects.py
+      run: python nbygcg_info_ding_push.py
     
     # - name: Run Bark info push
     #   env:

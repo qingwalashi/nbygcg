@@ -1,6 +1,6 @@
 # 阳光采购平台数据获取工具
 
-这个项目是一个自动化工具，用于从阳光采购平台获取未来三天的招标信息与最新采购公告，并使用 AI 模型对项目进行分类；同时提供本地前端看板（`index.html`）用于可视化查看与筛选。
+这个项目是一个自动化工具，用于从阳光采购平台获取未来三天的招标信息与最新采购公告，并使用 AI 模型对项目进行分类；同时提供本地前端看板（`index.html`）用于可视化查看与筛选，并支持钉钉/Bark 推送。
 
 ## 功能特点
 
@@ -10,6 +10,9 @@
 - 数据以 JSON 格式保存
 - 支持自动定时执行
 - 数据按开标日期排序
+- 支持推送：
+  - 钉钉群 Markdown 推送（昨日信息化采购公告 + 明日信息化开标）
+  - Bark 推送（信息化项目汇总）
 - 项目分类包括：
   - 信息化建设类项目
   - 信息化服务类项目
@@ -25,8 +28,9 @@
 ├── fetch_opening_projects.py      # 获取近期开标数据
 ├── fetch_purchase_bulletins.py    # 获取最新采购公告
 ├── classify_projects.py  # 项目分类程序
-├── ding_push_opening_projects.py  # 钉钉推送（明日开标）
+├── nbygcg_info_ding_push.py       # 钉钉推送（昨日公告 + 明日开标 摘要）
 ├── bark_push_opening_projects.py  # Bark 推送（信息化项目汇总，可选）
+├── nbygcg_info_bark_push.py       # Bark 推送（同上，另一实现）
 ├── index.html                     # 本地可视化看板（近期开标 / 最新公告）
 ├── requirements.txt      # 项目依赖
 ├── opening_projects.json          # 生成的招标数据
@@ -69,6 +73,23 @@ python -m http.server 8000
 # http://localhost:8000/index.html
 ```
 
+4. 可选：推送到钉钉 / Bark（需先配置环境变量，见下文“环境变量”）
+```bash
+# 钉钉（昨日信息化采购公告 + 明日信息化开标摘要）
+python nbygcg_info_ding_push.py
+
+# Bark（信息化项目清单汇总）
+python bark_push_opening_projects.py
+```
+
+### 一键流程（抓取 → 分类 → 推送）
+```bash
+python fetch_opening_projects.py && \
+python fetch_purchase_bulletins.py && \
+python classify_projects.py && \
+python nbygcg_info_ding_push.py
+```
+
 ### 自动运行（GitHub Actions）
 
 项目配置了 GitHub Actions，每天定时自动执行：
@@ -97,6 +118,27 @@ python -m http.server 8000
    - 名称：`DINGTALK_ACCESS_TOKEN`
    - 名称：`DINGTALK_SECRET`
 
+## 环境变量
+
+为使分类与推送脚本工作，需要以下环境变量（建议放在项目根目录 `.env` 文件中）：
+
+```env
+# 大模型分类（SiliconFlow 兼容 OpenAI SDK）
+OPENAI_API_KEY=your_api_key_here
+OPENAI_BASE_URL=https://api.siliconflow.cn/v1
+
+# 钉钉推送（至少需要以下两个）
+DINGTALK_WEBHOOK_URL=https://oapi.dingtalk.com/robot/send
+DINGTALK_ACCESS_TOKEN=your_access_token
+# 可选：安全加签
+DINGTALK_SECRET=your_sign_secret
+
+# Bark 推送（可选）
+BARK_KEY=your_bark_device_key
+```
+
+> `.env` 文件仅用于本地开发，切勿提交到仓库。
+
 #### 本地开发配置
 
 1. 创建环境变量文件：
@@ -106,14 +148,7 @@ touch .env
 ```
 
 2. 编辑 .env 文件，添加以下配置：
-```env
-# API 配置
-OPENAI_API_KEY=your_api_key_here
-OPENAI_BASE_URL=https://api.siliconflow.cn/v1
-
-# 可选：设置日志级别
-LOG_LEVEL=INFO
-```
+参考上文“环境变量”示例.
 
 3. 确保 .env 文件已被 .gitignore 忽略：
 ```bash

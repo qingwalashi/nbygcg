@@ -35,6 +35,12 @@
       --color-type-purchase: #ff5630;
       --color-type-other: #6554c0;
       --color-type-info: #ffab00;
+      /* Light backgrounds for project types */
+      --color-type-construction-bg: #e6f9fd; /* light of #00b8d9 */
+      --color-type-service-bg: #eaf6ef;     /* light of #36b37e */
+      --color-type-purchase-bg: #ffe9e3;    /* light of #ff5630 */
+      --color-type-other-bg: #eeebf8;       /* light of #6554c0 */
+      --color-type-info-bg: #fff4cc;        /* light of #ffab00 */
     }
 
     * {
@@ -93,12 +99,41 @@
 
     .menu-button:hover { background: var(--color-hover); }
     .menu-button.active { border-color: var(--color-primary); box-shadow: var(--shadow-small); }
+    /* Hide toggle by default (desktop) */
+    #sidebarToggle { display: none; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; }
+
+    /* Hamburger icon */
+    .hamburger {
+      position: relative;
+      width: 22px;
+      height: 2px;
+      background: var(--color-text-primary);
+      border-radius: 1px;
+      display: inline-block;
+    }
+    .hamburger::before,
+    .hamburger::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 22px;
+      height: 2px;
+      background: var(--color-text-primary);
+      border-radius: 1px;
+    }
+    .hamburger::before { top: -7px; }
+    .hamburger::after { top: 7px; }
 
     header {
       padding: var(--spacing-lg) 0;
       border-bottom: 1px solid var(--color-border);
       margin-bottom: var(--spacing-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
     }
+    header h1 { margin: 0; }
 
     h1 {
       font-size: 28px;
@@ -195,29 +230,66 @@
       color: white;
     }
 
+    /* Default (not active): light bg + colored border */
     .type-filter[data-type="信息化建设类项目"] {
-      background-color: var(--color-type-info);
-      color: white;
+      background-color: var(--color-type-info-bg);
+      color: var(--color-text-primary);
+      border-color: var(--color-border);
     }
 
     .type-filter[data-type="信息化服务类项目"] {
-      background-color: var(--color-type-service);
-      color: white;
+      background-color: var(--color-type-service-bg);
+      color: var(--color-text-primary);
+      border-color: var(--color-border);
     }
 
     .type-filter[data-type="信息化软硬件采购类项目"] {
-      background-color: var(--color-type-purchase);
-      color: white;
+      background-color: var(--color-type-purchase-bg);
+      color: var(--color-text-primary);
+      border-color: var(--color-border);
     }
 
     .type-filter[data-type="工程类项目"] {
-      background-color: var(--color-type-construction);
-      color: white;
+      background-color: var(--color-type-construction-bg);
+      color: var(--color-text-primary);
+      border-color: var(--color-border);
     }
 
     .type-filter[data-type="其他项目"] {
+      background-color: var(--color-type-other-bg);
+      color: var(--color-text-primary);
+      border-color: var(--color-border);
+    }
+
+    /* Active: deep bg + white text + colored border */
+    .type-filter.active[data-type="信息化建设类项目"] {
+      background-color: var(--color-type-info);
+      color: white;
+      border-color: var(--color-border);
+    }
+
+    .type-filter.active[data-type="信息化服务类项目"] {
+      background-color: var(--color-type-service);
+      color: white;
+      border-color: var(--color-border);
+    }
+
+    .type-filter.active[data-type="信息化软硬件采购类项目"] {
+      background-color: var(--color-type-purchase);
+      color: white;
+      border-color: var(--color-border);
+    }
+
+    .type-filter.active[data-type="工程类项目"] {
+      background-color: var(--color-type-construction);
+      color: white;
+      border-color: var(--color-border);
+    }
+
+    .type-filter.active[data-type="其他项目"] {
       background-color: var(--color-type-other);
       color: white;
+      border-color: var(--color-border);
     }
 
     .project-type-tag {
@@ -359,7 +431,7 @@
       background-color: var(--color-background);
       box-shadow: var(--shadow-small);
       margin-bottom: var(--spacing-md);
-      cursor: pointer;
+      cursor: default;
       display: flex;
       flex-direction: column;
     }
@@ -570,13 +642,50 @@
     .back-to-top:hover {
       background-color: var(--color-primary-light);
     }
+
+    /* Sidebar overlay for mobile */
+    .sidebar-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      display: none;
+      z-index: 1100;
+    }
+    .sidebar-overlay.visible { display: block; }
+
+    /* Off-canvas sidebar on mobile */
+    @media (max-width: 768px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 260px;
+        background: var(--color-background);
+        transform: translateX(-100%);
+        transition: transform .2s ease;
+        z-index: 1200;
+        padding: 16px;
+        border-right: 1px solid var(--color-border);
+      }
+      .sidebar.open { transform: translateX(0); }
+      /* Show header toggle; place to the right */
+      header h1 { order: 1; }
+      #sidebarToggle { display: inline-flex; order: 2; }
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
     <header>
-      <h1 id="headerTitle">即将开标项目</h1>
+      <button id="sidebarToggle" class="menu-button" aria-label="展开菜单" title="展开菜单">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <h1 id="headerTitle">阳光采购平台-信息看板</h1>
     </header>
 
     <div class="layout">
@@ -672,16 +781,34 @@
     </div>
   </div>
 
+  <!-- mobile overlay -->
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+    // Sidebar toggle for mobile
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const toggleBtn = document.getElementById('sidebarToggle');
+    function closeSidebar() {
+      sidebar && sidebar.classList.remove('open');
+      overlay && overlay.classList.remove('visible');
+    }
+    function openSidebar() {
+      sidebar && sidebar.classList.add('open');
+      overlay && overlay.classList.add('visible');
+    }
+    toggleBtn && toggleBtn.addEventListener('click', () => {
+      if (sidebar.classList.contains('open')) closeSidebar(); else openSidebar();
+    });
+    overlay && overlay.addEventListener('click', closeSidebar);
+    // Close sidebar when clicking menu items (mobile)
+    document.getElementById('menuOpening')?.addEventListener('click', closeSidebar);
+    document.getElementById('menuBulletins')?.addEventListener('click', closeSidebar);
     // 动态加载JSON数据（近期开标）
     fetch('opening_projects.json')
       .then(response => response.json())
       .then(data => {
-        // 更新页面标题
-        document.getElementById('headerTitle').textContent =
-          `${data.today} 至 ${data.future_date} 即将开标项目`;
-
         // 转换数据格式
         const projects = data.projects.map(item => ({
           date: item.kbDate,
@@ -733,9 +860,13 @@
               </div>
               <div class="project-list">
                 ${items.map(item => `
-                  <div class="project-card" onclick="window.location.href='${item.url}'">
+                  <div class="project-card">
                     <div class="project-title">${item.title}</div>
                     <div class="project-type-tag" data-type="${item.type}">${item.type}</div>
+                    <div class="bulletin-actions" style="margin-top: 8px;">
+                      <span></span>
+                      <a class="linklike" href="${item.url}" target="_blank" rel="noopener noreferrer">查看原文</a>
+                    </div>
                   </div>
                 `).join('')}
               </div>
