@@ -3,6 +3,7 @@ import json
 import requests
 from datetime import datetime, timedelta
 import re
+from zoneinfo import ZoneInfo
 
 def fetch_purchase_bulletins():
     url = "https://ygcg.nbcqjy.org/api/Portal/GetBulletinList"
@@ -125,7 +126,8 @@ def filter_recent_bulletins(items, days=3, exclude_today=True):
     - publishDate 需为 YYYY-MM-DD
     - exclude_today=True 表示不包含今天，只取 [today-days, today) 区间
     """
-    today = datetime.now().date()
+    # 使用北京时区获取当前日期
+    today = datetime.now(ZoneInfo("Asia/Shanghai")).date()
     start = today - timedelta(days=days)
     filtered = []
     for b in items:

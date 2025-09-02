@@ -2,6 +2,7 @@ import requests
 import json
 import os
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 
 def fetch_opening_projects():
@@ -17,17 +18,26 @@ def fetch_opening_projects():
     response = requests.post(url, headers=headers, data=payload)
     response_data = response.json()
 
-    # 获取今天的日期和未来三天的日期
-    today = datetime.now().date()
+    # 使用北京时区计算今天与未来三天的日期
+    beijing_tz = ZoneInfo("Asia/Shanghai")
+    beijing_now = datetime.now(beijing_tz)
+    today = beijing_now.date()
     future_date = today + timedelta(days=3)
 
     # 提取符合条件的项目
     filtered_projects = []
     for project in response_data["body"]["data"]["projectList"]:
-        kb_date = datetime.fromisoformat(project["kbDate"]).date()
+        # 解析开标时间：若无时区则按北京时区解释；若有时区则转换到北京时区
+        kb_raw = project["kbDate"]
+        dt = datetime.fromisoformat(kb_raw)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=beijing_tz)
+        else:
+            dt = dt.astimezone(beijing_tz)
+        kb_date = dt.date()
         if today <= kb_date <= future_date:
             filtered_projects.append({
-                "kbDate": datetime.fromisoformat(project["kbDate"]).strftime("%Y-%m-%d"),
+                "kbDate": dt.strftime("%Y-%m-%d"),
                 "prjName": project["prjName"],
                 "bulletinId": project["bulletinId"],
                 "prjType": "其他项目"
