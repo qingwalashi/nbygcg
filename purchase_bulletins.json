@@ -19,7 +19,11 @@
         "prjNo": "GC2025JC04801",
         "kbDate": "2025-09-11T14:00:00",
         "bulletinId": "2a43444c-2602-4266-95cc-a832aff5fa67",
+<<<<<<< HEAD
         "prjType": "其他项目"
+=======
+        "prjType": "工程类项目"
+>>>>>>> eb4dae70ce8c085249c28fe73e446c1eedc54992
     },
     {
         "prjTypeId": "02",
@@ -30,7 +34,11 @@
         "prjNo": "GC2025JC04800",
         "kbDate": "2025-09-09T14:00:00",
         "bulletinId": "9299aacc-ffbe-4d30-945f-f35b1ad584f1",
+<<<<<<< HEAD
         "prjType": "其他项目"
+=======
+        "prjType": "信息化服务类项目"
+>>>>>>> eb4dae70ce8c085249c28fe73e446c1eedc54992
     },
     {
         "prjTypeId": "02",
@@ -41,7 +49,11 @@
         "prjNo": "GC2025JC04799",
         "kbDate": "2025-09-10T14:30:00",
         "bulletinId": "08666701-5053-4e8c-81cd-02e0e11ec665",
+<<<<<<< HEAD
         "prjType": "其他项目"
+=======
+        "prjType": "信息化服务类项目"
+>>>>>>> eb4dae70ce8c085249c28fe73e446c1eedc54992
     },
     {
         "prjTypeId": "02",
@@ -74,7 +86,11 @@
         "prjNo": "GC2025JC04795",
         "kbDate": "2025-09-09T09:30:00",
         "bulletinId": "65e71142-67f7-49cf-9c04-b5b36b41b1f1",
+<<<<<<< HEAD
         "prjType": "其他项目"
+=======
+        "prjType": "信息化服务类项目"
+>>>>>>> eb4dae70ce8c085249c28fe73e446c1eedc54992
     },
     {
         "prjTypeId": "02",
@@ -107,7 +123,11 @@
         "prjNo": "GC2025JC04792",
         "kbDate": "2025-09-12T09:30:00",
         "bulletinId": "909517c6-f379-46cc-99ce-760fe318cb9e",
+<<<<<<< HEAD
         "prjType": "其他项目"
+=======
+        "prjType": "信息化服务类项目"
+>>>>>>> eb4dae70ce8c085249c28fe73e446c1eedc54992
     },
     {
         "prjTypeId": "02",
@@ -173,7 +193,11 @@
         "prjNo": "GC2025JC04786",
         "kbDate": "2025-09-10T09:30:00",
         "bulletinId": "e542408d-4049-425a-b6ed-0b872724795e",
+<<<<<<< HEAD
         "prjType": "其他项目"
+=======
+        "prjType": "工程类项目"
+>>>>>>> eb4dae70ce8c085249c28fe73e446c1eedc54992
     },
     {
         "prjTypeId": "02",
@@ -184,7 +208,11 @@
         "prjNo": "GC2025JC04785",
         "kbDate": "2025-09-12T09:30:00",
         "bulletinId": "9b5cd18e-66b5-42f4-92a7-f34400fcbeaa",
+<<<<<<< HEAD
         "prjType": "其他项目"
+=======
+        "prjType": "信息化服务类项目"
+>>>>>>> eb4dae70ce8c085249c28fe73e446c1eedc54992
     },
     {
         "prjTypeId": "02",
@@ -272,7 +300,11 @@
         "prjNo": "GC2025JC04765",
         "kbDate": "2025-09-10T09:00:00",
         "bulletinId": "56db7118-8ed9-4b60-9b50-71a1e1aacc83",
+<<<<<<< HEAD
         "prjType": "其他项目"
+=======
+        "prjType": "信息化服务类项目"
+>>>>>>> eb4dae70ce8c085249c28fe73e446c1eedc54992
     },
     {
         "prjTypeId": "02",
