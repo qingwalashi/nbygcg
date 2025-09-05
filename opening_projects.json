@@ -1,239 +1,11 @@
 {
-    "today": "2025-09-04",
-    "future_date": "2025-09-07",
+    "today": "2025-09-05",
+    "future_date": "2025-09-08",
     "projects": [
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波市水务环境集团福明净化水厂刮泥机维修工程",
-            "bulletinId": "a90b412d-af8b-4854-96b8-f199ca2a07ff",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波市水务环境集团2025年自控设备及备件采购项目",
-            "bulletinId": "77c3a45c-0737-49dc-8c81-c0dc432573b6",
-            "prjType": "信息化软硬件采购类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "集团公司年度技术咨询服务\t",
-            "bulletinId": "f14ebbe7-1f9a-4ace-950a-75f48dfd69f7",
-            "prjType": "信息化服务类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "横山水库生产经营保障用车采购项目 （重发）",
-            "bulletinId": "6154da8d-009d-4f23-9183-9820da8dab7a",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "老龙湾地块开发项目（HS16-01-29地块）市政管线CCTV检测服务采购",
-            "bulletinId": "dc340221-f410-4cfa-b627-9c5076777883",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波市海曙区孝闻街66号及周边区域老旧街区改造项目图纸复原、安全性鉴定、抗震性鉴定服务采购",
-            "bulletinId": "1f6f3b3e-a69a-44ba-8b49-39fa8401f2ef",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁海县工厂化海水养殖项目一期蓄水池水泵附属配件采购",
-            "bulletinId": "5480bbe9-6590-4128-a55e-1a259e5df99f",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "红桥集市景观提升项目（第二次）",
-            "bulletinId": "edfefbe5-28cf-4db5-83d4-a0257b734799",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "滨海公园塑胶地面更换",
-            "bulletinId": "741ff9e8-6b68-4a8a-bc57-7611acf82878",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "农副及下属子网络安全服务",
-            "bulletinId": "cba45de6-42c0-4721-bb81-5d96af4ddd8c",
-            "prjType": "信息化服务类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "G527力洋毛屿港大桥至长街下蔡段拓宽工程竣（交）工质量检测 JGJC标段",
-            "bulletinId": "e96b3f62-e883-45ee-a8bb-6e80ccda0b97",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "南苑望海酒店餐厨用具采购项目",
-            "bulletinId": "1ad028ac-94b1-4bc4-b51e-1f1eb59f2c5b",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波市轨道永盈供应链有限公司2025年及2026年劳工服采购",
-            "bulletinId": "ff7daa72-fc91-4a10-b9a1-192f961914c9",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波市轨道交通智慧运营分公司2025-2027年5号线、6号线一期、7号线、8号一期FAS（火灾报警系统）委外维保项目",
-            "bulletinId": "3e90d4bc-324c-4638-8381-8acb3198e1eb",
-            "prjType": "信息化服务类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波市轨道交通集团有限公司2025-2026年度职工健康体检项目",
-            "bulletinId": "8a521ea0-bc1e-4bca-bca7-05879cb85b21",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波国际贸易展览中心12号馆城市会议中心窗帘采购项目",
-            "bulletinId": "13d851a8-597c-41c2-9b40-ceadab044633",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波高新区未来产业创新园(一期)人才公寓北区通讯工程（重发）",
-            "bulletinId": "bcab4e05-07d8-4926-bc93-ddf6fe8cace0",
-            "prjType": "信息化建设类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "浙江纺织服装职业技术学院安保服务外包项目",
-            "bulletinId": "fbe95d64-197f-4ab6-a799-248b4454f0ee",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波甬江软件产业园（鄞州信创园）电子设备制造项目渲染实验室软件采购项目",
-            "bulletinId": "dba0c0b5-e21d-4077-b912-13dc64233593",
-            "prjType": "信息化软硬件采购类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "2025年黑麦草草种采购",
-            "bulletinId": "b4e2d58f-9df0-4e59-81c0-f22cbdacd992",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "海曙区秀水街历史文化街区工程（海曙区秀水街HS10-03-04a、06a、06b地块）主体结构及装饰装修（装饰装修）检测（重发）",
-            "bulletinId": "95fcf599-b583-44e1-bc85-8db2be5b9732",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "镇海区 ZH10-03-03 地块保障性租赁住房项目最终奖补专项审计报告服务采购",
-            "bulletinId": "52a93761-879a-4e41-bcf2-187e288fc055",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "慈城新城酒店地块（CC09-03-01b）建设项目洗衣房设备采购项目",
-            "bulletinId": "a23dc304-ccd7-45e6-baa5-7b26965adce1",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "行政食堂劳务服务及农田服务项目",
-            "bulletinId": "e5ab2374-0a1b-4780-b5f7-9084174e0d20",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波市公共交通集团有限公司2025年-2030年业务专线链路采购",
-            "bulletinId": "186cb5de-2fc5-46fd-b6e3-264b08c972bd",
-            "prjType": "信息化软硬件采购类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "2025年第一批工会数字化应用场景技术服务（重发）第二次",
-            "bulletinId": "2463e84f-30dc-452a-a273-38e0908d519e",
-            "prjType": "信息化服务类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波经济技术开发区化工集聚区临港板块污水处理厂一期工程桩基检测",
-            "bulletinId": "14365654-43bc-4015-9d1a-4aca4cd8d517",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "宁波华润兴光燃气企业安全评估与危险源辨识项目（重发）",
-            "bulletinId": "1199ca22-9108-4ea1-bf88-c509fa5c6f1c",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "新能源重卡双碳运充一体化充电桩项目",
-            "bulletinId": "78e3bd47-b290-4f77-a1d2-f7113bb8bf3e",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "北仑区中心城区地下管网提升改造项目（大碶工业区）保安",
-            "bulletinId": "081fa32e-fad5-47b1-a6a5-6472964ff9af",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "岩东污水处理厂屋顶外墙防水维修工程",
-            "bulletinId": "0fb51b6f-73fa-4a13-9beb-bc1b5f6cdca9",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "湖山一品花苑保障性租赁住房项目配租管理人员劳务服务",
-            "bulletinId": "c4561296-9752-4fec-9be4-fc6e3f110439",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "横港保租房公区家具采购",
-            "bulletinId": "aa424135-e8d6-44cb-b99b-bc282dd8bed4",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "杉海路待建范围内剩余违建及拔钉清零腾退拆除项目（拆除单位）",
-            "bulletinId": "dad3e77f-5e3e-4158-ac41-87d091855428",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-04",
-            "prjName": "杨家馨苑三期东侧配套工程（涉路施工质量安全性评价服务）",
-            "bulletinId": "634a35ab-eed8-489e-9d6e-656c6fbac5ad",
-            "prjType": "工程类项目"
-        },
         {
             "kbDate": "2025-09-05",
             "prjName": "董悦铭府配售型保障性住房项目专项咨询",
             "bulletinId": "25f8742f-8bdc-4d2e-a01a-51b7d5ed27ec",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-05",
-            "prjName": "2025年新周净化水厂高杆灯及路灯采购项目",
-            "bulletinId": "b6eed33c-d8d0-499d-92cc-b44ad4320082",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-05",
-            "prjName": "浙江路锋交通建设有限公司沥青采购项目",
-            "bulletinId": "af8c931e-c2ab-4029-9120-71f75c611e6b",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-05",
-            "prjName": "宁波交工矿业有限公司边坡稳定性分析评估报告编制项目",
-            "bulletinId": "8c8ac60e-59c1-4f68-8766-c5347f00a3ab",
             "prjType": "其他项目"
         },
         {
@@ -250,14 +22,50 @@
         },
         {
             "kbDate": "2025-09-05",
+            "prjName": "宁波交工矿业有限公司边坡稳定性分析评估报告编制项目",
+            "bulletinId": "8c8ac60e-59c1-4f68-8766-c5347f00a3ab",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-05",
+            "prjName": "浙江路锋交通建设有限公司沥青采购项目",
+            "bulletinId": "af8c931e-c2ab-4029-9120-71f75c611e6b",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-05",
+            "prjName": "2025年新周净化水厂高杆灯及路灯采购项目",
+            "bulletinId": "b6eed33c-d8d0-499d-92cc-b44ad4320082",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-05",
             "prjName": "宁波杭州湾新区公用事业发展有限公司机动车车辆保险",
             "bulletinId": "b99a54d3-aad7-4e3e-80d4-6e2483e3df92",
             "prjType": "其他项目"
         },
         {
             "kbDate": "2025-09-05",
-            "prjName": "职工上下班通勤车辆服务项目",
-            "bulletinId": "61494a4f-869d-4626-92d9-f21330cd9b7f",
+            "prjName": "保税食品仓老旧货梯更新项目",
+            "bulletinId": "a77cbccf-3d0b-4ea4-baca-b71aabfb40d6",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-05",
+            "prjName": "广场公司及托管项目(和义大道、月湖盛园)2025-2026年度电梯维保",
+            "bulletinId": "9c4e594e-8de5-4e73-a9a0-712097693b86",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-05",
+            "prjName": "江南路（高新区段）工程施工期间交通组织方案编制及后期跟踪咨询服务项目",
+            "bulletinId": "19fb4181-28c3-425f-abe0-cc617bbe3488",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-05",
+            "prjName": "2025年浙江省城市篮球联赛城市争霸赛（后续场次）外聘安保服务采购",
+            "bulletinId": "4270fcf6-c0a1-4a2a-9eec-fd83f8ca167b",
             "prjType": "其他项目"
         },
         {
@@ -274,18 +82,6 @@
         },
         {
             "kbDate": "2025-09-05",
-            "prjName": "宁波北仑南区热力有限公司坝头路二期（布阵岭东-富春江路）工程DN600热力管线关山路段迁改工程",
-            "bulletinId": "72d3ffca-8461-46b0-916d-fc874fcacc09",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-05",
-            "prjName": "宁波报业传媒集团有限公司智能媒资库一期项目",
-            "bulletinId": "c20fc78b-66f9-494e-805f-a9146256c1d7",
-            "prjType": "信息化建设类项目"
-        },
-        {
-            "kbDate": "2025-09-05",
             "prjName": "梅山消防救援站新建工程项目监理",
             "bulletinId": "2c9a8945-de3f-4fc2-a135-50f90876b27c",
             "prjType": "工程类项目"
@@ -298,14 +94,26 @@
         },
         {
             "kbDate": "2025-09-05",
-            "prjName": "2025-2027年绿化养护委外服务项目",
-            "bulletinId": "3ae135a2-8e2e-4be7-9adc-92b7db327e6f",
-            "prjType": "其他项目"
+            "prjName": "宁波北仑南区热力有限公司坝头路二期（布阵岭东-富春江路）工程DN600热力管线关山路段迁改工程",
+            "bulletinId": "72d3ffca-8461-46b0-916d-fc874fcacc09",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-05",
+            "prjName": "宁波报业传媒集团有限公司智能媒资库一期项目",
+            "bulletinId": "c20fc78b-66f9-494e-805f-a9146256c1d7",
+            "prjType": "信息化建设类项目"
         },
         {
             "kbDate": "2025-09-05",
             "prjName": "宁波国际贸易展览中心12号馆城市会议中心地毯采购项目",
             "bulletinId": "8b252519-a397-4eb2-95d5-877837013250",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-05",
+            "prjName": "2025-2027年绿化养护委外服务项目",
+            "bulletinId": "3ae135a2-8e2e-4be7-9adc-92b7db327e6f",
             "prjType": "其他项目"
         },
         {
@@ -316,26 +124,8 @@
         },
         {
             "kbDate": "2025-09-05",
-            "prjName": "保税食品仓老旧货梯更新项目",
-            "bulletinId": "a77cbccf-3d0b-4ea4-baca-b71aabfb40d6",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-05",
-            "prjName": "江南路（高新区段）工程施工期间交通组织方案编制及后期跟踪咨询服务项目",
-            "bulletinId": "19fb4181-28c3-425f-abe0-cc617bbe3488",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-05",
-            "prjName": "广场公司及托管项目(和义大道、月湖盛园)2025-2026年度电梯维保",
-            "bulletinId": "9c4e594e-8de5-4e73-a9a0-712097693b86",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-05",
-            "prjName": "2025年浙江省城市篮球联赛城市争霸赛（后续场次）外聘安保服务采购",
-            "bulletinId": "4270fcf6-c0a1-4a2a-9eec-fd83f8ca167b",
+            "prjName": "职工上下班通勤车辆服务项目",
+            "bulletinId": "61494a4f-869d-4626-92d9-f21330cd9b7f",
             "prjType": "其他项目"
         },
         {
@@ -348,30 +138,6 @@
             "kbDate": "2025-09-05",
             "prjName": "宁波华生商业管理有限公司维科冬被采购项目",
             "bulletinId": "7e89d2de-3bbe-4a59-b65b-7ba122121cb5",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-05",
-            "prjName": "工会中秋福利",
-            "bulletinId": "a601edfd-8129-477e-b2e2-d18c5f1694c6",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-05",
-            "prjName": "海纳公司范宅项目租金评估服务采购",
-            "bulletinId": "654f2ae8-5e86-4b9d-8ffa-af6b17ee139b",
-            "prjType": "其他项目"
-        },
-        {
-            "kbDate": "2025-09-05",
-            "prjName": "海欣控股集团网络技术支持服务（重发）",
-            "bulletinId": "44b4446f-3f4a-4f16-b398-c3156b5f7128",
-            "prjType": "信息化服务类项目"
-        },
-        {
-            "kbDate": "2025-09-05",
-            "prjName": "慈城镇云鹭湾及慈湖人家未来社区安保、保洁等服务采购项目",
-            "bulletinId": "9fde58f6-41a4-4105-beb3-7647d8e6c101",
             "prjType": "其他项目"
         },
         {
@@ -394,15 +160,33 @@
         },
         {
             "kbDate": "2025-09-05",
-            "prjName": "浙江路锋交通建设有限公司粗、细集料（凝灰岩）采购项目",
-            "bulletinId": "6a792cbb-96ae-482f-bbb1-726f4216dbea",
+            "prjName": "李包丽泰九龙康养中心筹备期物业管理服务项目",
+            "bulletinId": "eaee98ed-3c5e-40cc-8c58-e5f50cf939ea",
             "prjType": "其他项目"
         },
         {
             "kbDate": "2025-09-05",
-            "prjName": "李包丽泰九龙康养中心筹备期物业管理服务项目",
-            "bulletinId": "eaee98ed-3c5e-40cc-8c58-e5f50cf939ea",
+            "prjName": "慈城镇云鹭湾及慈湖人家未来社区安保、保洁等服务采购项目",
+            "bulletinId": "9fde58f6-41a4-4105-beb3-7647d8e6c101",
             "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-05",
+            "prjName": "工会中秋福利",
+            "bulletinId": "a601edfd-8129-477e-b2e2-d18c5f1694c6",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-05",
+            "prjName": "海纳公司范宅项目租金评估服务采购",
+            "bulletinId": "654f2ae8-5e86-4b9d-8ffa-af6b17ee139b",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-05",
+            "prjName": "海欣控股集团网络技术支持服务（重发）",
+            "bulletinId": "44b4446f-3f4a-4f16-b398-c3156b5f7128",
+            "prjType": "信息化服务类项目"
         },
         {
             "kbDate": "2025-09-05",
@@ -418,20 +202,14 @@
         },
         {
             "kbDate": "2025-09-05",
-            "prjName": "2025-2028年度北仑东片区（郭巨、白峰、春晓、梅山）农污设施养护及维修项目",
-            "bulletinId": "b9bfaa42-586c-4c57-a801-380a52b8fe6d",
-            "prjType": "工程类项目"
-        },
-        {
-            "kbDate": "2025-09-05",
             "prjName": "宁波华侨温德姆酒店中巴车采购",
             "bulletinId": "58b3c165-52e8-46de-99d2-fe710df1efda",
             "prjType": "其他项目"
         },
         {
             "kbDate": "2025-09-05",
-            "prjName": "宁波溪口抽水蓄能电站办公楼四楼大屏改造项目",
-            "bulletinId": "6dd35d1e-4df3-40bc-8db3-c84940ae3778",
+            "prjName": "2025-2028年度北仑东片区（郭巨、白峰、春晓、梅山）农污设施养护及维修项目",
+            "bulletinId": "b9bfaa42-586c-4c57-a801-380a52b8fe6d",
             "prjType": "工程类项目"
         },
         {
@@ -439,6 +217,12 @@
             "prjName": "北岸服务区司机之家提升项目",
             "bulletinId": "b6b56c38-178e-443a-ac0f-ece51c3ee772",
             "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-05",
+            "prjName": "宁波溪口抽水蓄能电站办公楼四楼大屏改造项目",
+            "bulletinId": "6dd35d1e-4df3-40bc-8db3-c84940ae3778",
+            "prjType": "工程类项目"
         },
         {
             "kbDate": "2025-09-05",
@@ -450,7 +234,7 @@
             "kbDate": "2025-09-05",
             "prjName": "宁波日报物产有限公司生产经营车辆新长安睿行M60购置",
             "bulletinId": "e0886348-6938-48eb-a11f-6f880173163d",
-            "prjType": "工程类项目"
+            "prjType": "其他项目"
         },
         {
             "kbDate": "2025-09-05",
@@ -487,6 +271,150 @@
             "prjName": "宁波市海曙区长乐新村周边基础设施提升工程市政工程材料、道路工程检测",
             "bulletinId": "89a20cdf-6507-4d31-99cb-9f4f9920c22e",
             "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "绿色生态公司2025年度实验室计量器具检定校准项目",
+            "bulletinId": "4374dc90-74dd-4c04-a407-f7ad9f89dd00",
+            "prjType": "信息化服务类项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "宁波果品批发市场新疆西梅对口帮扶活动项目",
+            "bulletinId": "f309a365-5d35-4c96-ae02-c6cce9b1a511",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "大庆北路318项目（宁波大学创新港项目）新建围墙工程",
+            "bulletinId": "02b2b2df-3fde-4583-bf06-863e524e7bfc",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "宁波市轨道交通运营分公司4号线轨道专业设施设备维保项目（维保委外）",
+            "bulletinId": "81f44637-51ba-41da-97c6-34b444bfe72e",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "宁波市天然舞台文化发展有限公司物业管理服务项目",
+            "bulletinId": "e7dc0ea0-dfea-4f00-acda-24e4ab7c7c1f",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "宁波市海曙区镇乡收集管网及农村生活污水处理设施养护服务采购项目",
+            "bulletinId": "15f3b7ec-7a3a-4d72-9b6b-ec00f542438a",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "2025年浙江省城市篮球联赛（城市争霸赛）体展服务采购",
+            "bulletinId": "fd05021e-2c48-41fb-abdd-89c9e8c154ec",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "2025年浙江省城市篮球联赛（城市争霸赛）灯光舞美服务采购",
+            "bulletinId": "5e646bd3-f664-46db-915f-535eb06276bc",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "丁家湾3号地块土地污染治理项目（结决算评审）",
+            "bulletinId": "9d293ea9-3a60-45de-a00f-b0d4ae33d91d",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "姚江水厂第三出厂管工程临时使用林地现状调查及报批服务",
+            "bulletinId": "3750e262-9e1f-463e-8660-79b3c459c3eb",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "宁波四明化工有限公司10万吨/年高浓度废液资源化利用联产2亿Nm3年合成气、氢气及氢气综合利用技术改造项目安装工程无损检测项目（重发）",
+            "bulletinId": "1979fb7e-42cb-4aa3-859c-471627f59a2e",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "邱家山水厂和岭丰水厂防雷系统改造工程项目（重招）",
+            "bulletinId": "4a8a4e83-b8f3-4c4b-b790-fe51c229a552",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "宁波市总工会职工服务中心送清凉物资采购招标项目",
+            "bulletinId": "6bba585c-5c9a-40f9-8927-9634009db2ca",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "宁波广播电视集团数字化信息管理平台电台广告模块研发项目",
+            "bulletinId": "da93c7bb-1bc7-429a-b2f8-3c16ca26c66f",
+            "prjType": "信息化建设类项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "天鑫未来社区部分道路工程施工期间交通组织协管服务项目",
+            "bulletinId": "866f439e-dfd7-46fa-b674-8708a04a89ec",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "宁波原水有限公司2025年水库库区管理标示标牌采购项目",
+            "bulletinId": "71b41fd7-03d8-4f62-9e30-7b193994f2dc",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "2025年宁波大通开发有限公司生产经营保障用车采购项目",
+            "bulletinId": "8220d919-24a5-4002-abed-a9ae0e07fde0",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "北仑纳凉绿岛夏日宣传项目（第二次）",
+            "bulletinId": "3b7db2fe-6b93-40d5-b274-4ea57d1341c1",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "青年运动中心南侧封闭装修项目",
+            "bulletinId": "e9cee82a-8d36-48b6-b134-4b95216ddd30",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "宁波农副产品物流中心项目三期平整工程",
+            "bulletinId": "bb15c785-7530-4cd3-8d38-199808c93274",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "东海一号野化大黄鱼行业推广",
+            "bulletinId": "24f1412f-64f3-4a72-b592-c9d2d99ccafb",
+            "prjType": "其他项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "2025年横街粮站改造项目（造价咨询）",
+            "bulletinId": "89313df2-3d9e-45b5-8ca3-16a0b8a80a05",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "象山县园中路公交站项目安装及配套工程",
+            "bulletinId": "95bbaf60-e998-41b5-9e93-e86a3a646fee",
+            "prjType": "工程类项目"
+        },
+        {
+            "kbDate": "2025-09-08",
+            "prjName": "中湾广场国庆美陈设计及制作单位采购",
+            "bulletinId": "27468d48-1aa1-40d9-a55c-183cc1903de2",
+            "prjType": "其他项目"
         }
     ]
 }
