@@ -492,6 +492,12 @@
       align-items: center;
       justify-content: space-between; /* 左侧：查看详情；右侧：查看原文 */
     }
+    /* 左侧按钮容器，放置“查看详情/采购内容” */
+    .bulletin-left-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
     
     .linklike {
       color: var(--color-primary);
@@ -977,6 +983,7 @@
         const endDate = b.endDate ? `<span class="tag">截止：${fmtDateTime(b.endDate)}</span>` : '';
         const kbDate = b.kbDate ? `<span class="tag">开标：${fmtDateTime(b.kbDate)}</span>` : '';
         const content = b.bulletinContent ? b.bulletinContent : '暂无详细内容';
+        const prjContent = b.prjContent ? b.prjContent : '暂无采购内容';
         const originalUrl = b.bulletinId ? `https://ygcg.nbcqjy.org/detail?bulletinId=${b.bulletinId}` : '';
         return `
           <div class="bulletin-card">
@@ -989,7 +996,10 @@
               </div>
             </div>
             <div class="bulletin-actions">
-              <span class="linklike bulletin-detail" data-title="${safeTitle.replace(/"/g,'&quot;')}" data-content="${content.replace(/"/g,'&quot;')}">查看详情</span>
+              <div class="bulletin-left-actions">
+                <span class="linklike bulletin-detail" data-title="${safeTitle.replace(/"/g,'&quot;')}" data-content="${content.replace(/"/g,'&quot;')}">查看详情</span>
+                <span class="linklike bulletin-prjcontent" data-title="${safeTitle.replace(/"/g,'&quot;')} - 采购内容" data-content="${prjContent.replace(/"/g,'&quot;')}">采购内容</span>
+              </div>
               ${originalUrl ? `<a class="linklike" href="${originalUrl}" target="_blank" rel="noopener noreferrer">查看原文</a>` : '<span style="color:#999;font-size:12px;">无原文链接</span>'}
             </div>
           </div>
@@ -1000,6 +1010,12 @@
       document.querySelectorAll('.bulletin-detail').forEach(el => {
         el.addEventListener('click', () => {
           openModal(el.dataset.title || '公告详情', el.dataset.content || '');
+        });
+      });
+      // 绑定“采购内容”弹窗
+      document.querySelectorAll('.bulletin-prjcontent').forEach(el => {
+        el.addEventListener('click', () => {
+          openModal(el.dataset.title || '采购内容', el.dataset.content || '');
         });
       });
     }

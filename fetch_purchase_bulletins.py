@@ -117,7 +117,8 @@ def process_bulletins(raw_data):
             "prjNo": it.get("prjNo") or it.get("projectNo") or it.get("code"),
             "kbDate": parse_to_iso_datetime(it.get("kbDate") or it.get("openDate") or it.get("bidOpenDate")),
             "bulletinId": bulletin_id,
-            "prjType": "其他项目"
+            "prjType": "其他项目",
+            "prjContent": None
         })
     return processed
 

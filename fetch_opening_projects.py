@@ -18,11 +18,11 @@ def fetch_opening_projects():
     response = requests.post(url, headers=headers, data=payload)
     response_data = response.json()
 
-    # 使用北京时区计算今天与未来三天的日期
+    # 使用北京时区计算今天与未来一天的日期
     beijing_tz = ZoneInfo("Asia/Shanghai")
     beijing_now = datetime.now(beijing_tz)
     today = beijing_now.date()
-    future_date = today + timedelta(days=3)
+    future_date = today + timedelta(days=1)
 
     # 提取符合条件的项目
     filtered_projects = []
@@ -40,7 +40,8 @@ def fetch_opening_projects():
                 "kbDate": dt.strftime("%Y-%m-%d"),
                 "prjName": project["prjName"],
                 "bulletinId": project["bulletinId"],
-                "prjType": "其他项目"
+                "prjType": "其他项目",
+                "prjContent": None
             })
 
     # 按开标日期升序排序

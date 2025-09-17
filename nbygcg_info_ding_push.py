@@ -103,6 +103,13 @@ def generate_push_content(yesterday_bulletins: Dict[str, List[Dict]], tomorrow_p
                     lines.append(f"- [{title}]({url})（开标：{kb_display}）")
                 else:
                     lines.append(f"- [{title}]({url})")
+                # 追加采购内容 prjContent（若存在），为避免过长，进行适度截断并以引用展示
+                prj_content = (it.get('prjContent') or '').strip()
+                if prj_content:
+                    one_line = ' '.join(prj_content.split())  # 压缩换行与多余空格
+                    if len(one_line) > 200:
+                        one_line = one_line[:200].rstrip() + '...'
+                    lines.append(f"  > {one_line}")
             lines.append("")
 
     # 明日信息化开标项目
