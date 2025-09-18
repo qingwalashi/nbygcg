@@ -40,6 +40,12 @@ def fetch_opening_projects():
                 "kbDate": dt.strftime("%Y-%m-%d"),
                 "prjName": project["prjName"],
                 "bulletinId": project["bulletinId"],
+                "prjId": project.get("prjId"),
+                "prjNo": project.get("prjNo"),
+                "prjUrl": (
+                    f"https://ygcg.nbcqjy.org/detail?type=1&prjId={project.get('prjId')}" if project.get("prjId")
+                    else f"https://ygcg.nbcqjy.org/detail?bulletinId={project.get('bulletinId')}"
+                ),
                 "prjType": "其他项目",
                 "prjContent": None
             })

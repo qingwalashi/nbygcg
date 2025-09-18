@@ -98,7 +98,11 @@ def generate_push_content(yesterday_bulletins: Dict[str, List[Dict]], tomorrow_p
             for it in items:
                 title = it.get('bulletinTitle') or it.get('title') or '未命名项目'
                 kb_display = parse_iso_to_display(it.get('kbDate') or '')
-                url = f"https://ygcg.nbcqjy.org/detail?bulletinId={it.get('bulletinId')}"
+                prj_id = it.get('prjId')
+                url = (
+                    f"https://ygcg.nbcqjy.org/detail?type=1&prjId={urllib.parse.quote(prj_id)}"
+                    if prj_id else f"https://ygcg.nbcqjy.org/detail?bulletinId={it.get('bulletinId')}"
+                )
                 if kb_display:
                     lines.append(f"- [{title}]({url})（开标：{kb_display}）")
                 else:
@@ -124,7 +128,11 @@ def generate_push_content(yesterday_bulletins: Dict[str, List[Dict]], tomorrow_p
                 continue
             lines.append(f"#### {pt}")
             for project in items:
-                project_url = f"https://ygcg.nbcqjy.org/detail?bulletinId={project['bulletinId']}"
+                prj_id = project.get('prjId')
+                project_url = (
+                    f"https://ygcg.nbcqjy.org/detail?type=1&prjId={urllib.parse.quote(prj_id)}"
+                    if prj_id else f"https://ygcg.nbcqjy.org/detail?bulletinId={project.get('bulletinId')}"
+                )
                 lines.append(f"- [{project['prjName']}]({project_url})")
             lines.append("")
 

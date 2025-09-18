@@ -815,12 +815,12 @@
     fetch('opening_projects.json')
       .then(response => response.json())
       .then(data => {
-        // 转换数据格式
         const projects = data.projects.map(item => ({
           date: item.kbDate,
           title: item.prjName,
           type: item.prjType,
-          url: "https://ygcg.nbcqjy.org/detail?bulletinId="+item.bulletinId
+          prjId: item.prjId,
+          url: item.prjUrl
         }));
 
         // 生成日期筛选按钮
@@ -984,7 +984,7 @@
         const kbDate = b.kbDate ? `<span class="tag">开标：${fmtDateTime(b.kbDate)}</span>` : '';
         const content = b.bulletinContent ? b.bulletinContent : '暂无详细内容';
         const prjContent = b.prjContent ? b.prjContent : '暂无采购内容';
-        const originalUrl = b.bulletinId ? `https://ygcg.nbcqjy.org/detail?bulletinId=${b.bulletinId}` : '';
+        const originalUrl = b.prjUrl || '';
         return `
           <div class="bulletin-card">
             <div class="bulletin-content">

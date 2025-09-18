@@ -108,6 +108,9 @@ def process_bulletins(raw_data):
         # 提取 autoId 作为 bulletinId（若无则回退 id），并尽量规范为字符串
         raw_bid = it.get("autoId") if it.get("autoId") is not None else (it.get("id") if it.get("id") is not None else it.get("bulletinId"))
         bulletin_id = str(raw_bid) if raw_bid is not None else None
+        prj_id = it.get("prjId") or it.get("projectId") or it.get("prjid") or it.get("PrjId")
+        # 根据需求：公告的 prjUrl 固定使用 bulletinId 的链接形式
+        prj_url = f"https://ygcg.nbcqjy.org/detail?bulletinId={bulletin_id}" if bulletin_id else None
         processed.append({
             "prjTypeId": prj_type_id,
             "publishDate": publish_date_ymd,  # YYYY-MM-DD 格式
@@ -117,6 +120,8 @@ def process_bulletins(raw_data):
             "prjNo": it.get("prjNo") or it.get("projectNo") or it.get("code"),
             "kbDate": parse_to_iso_datetime(it.get("kbDate") or it.get("openDate") or it.get("bidOpenDate")),
             "bulletinId": bulletin_id,
+            "prjId": prj_id,
+            "prjUrl": prj_url,
             "prjType": "其他项目",
             "prjContent": None
         })
