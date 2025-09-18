@@ -413,6 +413,17 @@
       margin-bottom: var(--spacing-xs);
     }
 
+    /* 开标项目的采购内容预览 */
+    .project-content {
+      margin-top: 6px;
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      background: var(--color-background-secondary);
+      padding: 8px;
+      border-radius: 6px;
+      white-space: pre-wrap;
+    }
+
     .no-results {
       text-align: center;
       padding: var(--spacing-xl);
@@ -820,7 +831,8 @@
           title: item.prjName,
           type: item.prjType,
           prjId: item.prjId,
-          url: item.prjUrl
+          url: item.prjUrl,
+          prjContent: item.prjContent || null
         }));
 
         // 生成日期筛选按钮
@@ -869,6 +881,7 @@
                   <div class="project-card">
                     <div class="project-title">${item.title}</div>
                     <div class="project-type-tag" data-type="${item.type}">${item.type}</div>
+                    ${item.prjContent ? `<div class="project-content">${item.prjContent}</div>` : ''}
                     <div class="bulletin-actions" style="margin-top: 8px;">
                       <span></span>
                       <a class="linklike" href="${item.url}" target="_blank" rel="noopener noreferrer">查看原文</a>
@@ -983,7 +996,7 @@
         const endDate = b.endDate ? `<span class="tag">截止：${fmtDateTime(b.endDate)}</span>` : '';
         const kbDate = b.kbDate ? `<span class="tag">开标：${fmtDateTime(b.kbDate)}</span>` : '';
         const content = b.bulletinContent ? b.bulletinContent : '暂无详细内容';
-        const prjContent = b.prjContent ? b.prjContent : '暂无采购内容';
+        const prjContent = b.prjContent ? b.prjContent : null;
         const originalUrl = b.prjUrl || '';
         return `
           <div class="bulletin-card">
@@ -994,11 +1007,11 @@
                 <div class="bulletin-type-row">${typeTag}</div>
                 <div class="bulletin-times">${publishDate}${endDate}${kbDate}</div>
               </div>
+              ${prjContent ? `<div class="project-content">${prjContent}</div>` : ''}
             </div>
             <div class="bulletin-actions">
               <div class="bulletin-left-actions">
                 <span class="linklike bulletin-detail" data-title="${safeTitle.replace(/"/g,'&quot;')}" data-content="${content.replace(/"/g,'&quot;')}">查看详情</span>
-                <span class="linklike bulletin-prjcontent" data-title="${safeTitle.replace(/"/g,'&quot;')} - 采购内容" data-content="${prjContent.replace(/"/g,'&quot;')}">采购内容</span>
               </div>
               ${originalUrl ? `<a class="linklike" href="${originalUrl}" target="_blank" rel="noopener noreferrer">查看原文</a>` : '<span style="color:#999;font-size:12px;">无原文链接</span>'}
             </div>
@@ -1010,12 +1023,6 @@
       document.querySelectorAll('.bulletin-detail').forEach(el => {
         el.addEventListener('click', () => {
           openModal(el.dataset.title || '公告详情', el.dataset.content || '');
-        });
-      });
-      // 绑定“采购内容”弹窗
-      document.querySelectorAll('.bulletin-prjcontent').forEach(el => {
-        el.addEventListener('click', () => {
-          openModal(el.dataset.title || '采购内容', el.dataset.content || '');
         });
       });
     }

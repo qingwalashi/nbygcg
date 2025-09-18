@@ -111,8 +111,8 @@ def generate_push_content(yesterday_bulletins: Dict[str, List[Dict]], tomorrow_p
                 prj_content = (it.get('prjContent') or '').strip()
                 if prj_content:
                     one_line = ' '.join(prj_content.split())  # 压缩换行与多余空格
-                    if len(one_line) > 200:
-                        one_line = one_line[:200].rstrip() + '...'
+                    if len(one_line) > 500:
+                        one_line = one_line[:500].rstrip() + '……'
                     lines.append(f"  > {one_line}")
             lines.append("")
 
@@ -134,6 +134,13 @@ def generate_push_content(yesterday_bulletins: Dict[str, List[Dict]], tomorrow_p
                     if prj_id else f"https://ygcg.nbcqjy.org/detail?bulletinId={project.get('bulletinId')}"
                 )
                 lines.append(f"- [{project['prjName']}]({project_url})")
+                # 追加采购内容 prjContent（若存在），为避免过长，进行适度截断并以引用展示
+                prj_content = (project.get('prjContent') or '').strip()
+                if prj_content:
+                    one_line = ' '.join(prj_content.split())  # 压缩换行与多余空格
+                    if len(one_line) > 500:
+                        one_line = one_line[:500].rstrip() + '……'
+                    lines.append(f"  > {one_line}")
             lines.append("")
 
     return "\n".join(lines)

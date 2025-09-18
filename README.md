@@ -7,8 +7,10 @@
 - 自动获取未来三天的招标信息
 - 自动获取最近的采购公告（并标准化关键字段）
 - 使用 AI 模型对项目进行智能分类
-- 数据以 JSON 格式保存
-- 支持自动定时执行
+- 智能抽取“项目采购内容”摘要到 `prjContent` 字段（来自公告正文或开标接口详情）
+- 提供本地前端看板：近期开标、最新公告，支持搜索/类型/日期筛选、详情弹窗
+- 数据以 JSON 保存，便于二次加工
+- 支持 GitHub Actions 定时自动执行
 - 数据按开标日期排序
 - 支持推送：
   - 钉钉群 Markdown 推送（昨日信息化采购公告 + 明日信息化开标）
@@ -26,12 +28,14 @@
 .
 ├── .github/workflows/    # GitHub Actions 工作流配置
 ├── fetch_opening_projects.py      # 获取近期开标数据
-├── fetch_purchase_bulletins.py    # 获取最新采购公告
+├── fetch_purchase_bulletins.py    # 获取最新采购公告（清洗为数组）
 ├── classify_projects.py  # 项目分类程序
+├── extract_procurement_content.py # 从正文抽取“项目采购内容”摘要到 prjContent
+├── clear_prj_content.py           # 将两个 JSON 中的 prjContent 批量置空（清理工具）
 ├── nbygcg_info_ding_push.py       # 钉钉推送（昨日公告 + 明日开标 摘要）
 ├── bark_push_opening_projects.py  # Bark 推送（信息化项目汇总，可选）
 ├── nbygcg_info_bark_push.py       # Bark 推送（同上，另一实现）
-├── index.html                     # 本地可视化看板（近期开标 / 最新公告）
+├── index.html                     # 本地可视化看板（近期开标 / 最新公告，支持搜索筛选与弹窗）
 ├── requirements.txt      # 项目依赖
 ├── opening_projects.json          # 生成的招标数据
 └── purchase_bulletins.json        # 生成的采购公告数据
@@ -65,7 +69,12 @@ python fetch_purchase_bulletins.py
 python classify_projects.py
 ```
 
-3. 本地查看前端看板（推荐使用本地 HTTP 服务，以便浏览器能加载 JSON 文件）：
+3. 可选：抽取“项目采购内容”（将摘要写入两个 JSON 的 `prjContent` 字段，仅对信息化类项目执行）：
+```bash
+python extract_procurement_content.py
+```
+
+4. 本地查看前端看板（推荐使用本地 HTTP 服务，以便浏览器能加载 JSON 文件）：
 ```bash
 # 在项目根目录启动简易服务（默认 8000 端口）
 python -m http.server 8000
@@ -73,7 +82,7 @@ python -m http.server 8000
 # http://localhost:8000/index.html
 ```
 
-4. 可选：推送到钉钉 / Bark（需先配置环境变量，见下文“环境变量”）
+5. 可选：推送到钉钉 / Bark（需先配置环境变量，见下文“环境变量”）
 ```bash
 # 钉钉（昨日信息化采购公告 + 明日信息化开标摘要）
 python nbygcg_info_ding_push.py
@@ -82,11 +91,12 @@ python nbygcg_info_ding_push.py
 python bark_push_opening_projects.py
 ```
 
-### 一键流程（抓取 → 分类 → 推送）
+### 一键流程（抓取 → 分类 → 抽取 → 推送）
 ```bash
 python fetch_opening_projects.py && \
 python fetch_purchase_bulletins.py && \
 python classify_projects.py && \
+python extract_procurement_content.py && \
 python nbygcg_info_ding_push.py
 ```
 
@@ -95,6 +105,7 @@ python nbygcg_info_ding_push.py
 项目配置了 GitHub Actions，每天定时自动执行：
 - 抓取近期开标与最新采购公告
 - 运行分类脚本并更新 `opening_projects.json`、`purchase_bulletins.json`
+- 抽取“项目采购内容”并写入 `prjContent`
 - 提交改动并进行钉钉推送（开标信息）
 你也可以在 GitHub 仓库的 Actions 页面手动触发执行。
 
@@ -114,6 +125,8 @@ python nbygcg_info_ding_push.py
    - 名称：`OPENAI_BASE_URL`
      值：`https://api.siliconflow.cn/v1`
 
+   - 名称：`OPENAI_MODEL`（可选，默认 `Qwen/Qwen2.5-72B-Instruct`）
+
    - 名称：`DINGTALK_WEBHOOK_URL`（用于钉钉推送开标信息）
    - 名称：`DINGTALK_ACCESS_TOKEN`
    - 名称：`DINGTALK_SECRET`
@@ -123,9 +136,10 @@ python nbygcg_info_ding_push.py
 为使分类与推送脚本工作，需要以下环境变量（建议放在项目根目录 `.env` 文件中）：
 
 ```env
-# 大模型分类（SiliconFlow 兼容 OpenAI SDK）
+# 大模型分类/抽取（SiliconFlow 兼容 OpenAI SDK）
 OPENAI_API_KEY=your_api_key_here
 OPENAI_BASE_URL=https://api.siliconflow.cn/v1
+OPENAI_MODEL=Qwen/Qwen2.5-72B-Instruct
 
 # 钉钉推送（至少需要以下两个）
 DINGTALK_WEBHOOK_URL=https://oapi.dingtalk.com/robot/send
@@ -164,6 +178,9 @@ python fetch_purchase_bulletins.py
 
 # 分类项目/公告
 python classify_projects.py
+
+# （可选）抽取项目采购内容
+python extract_procurement_content.py
 ```
 
 注意：
@@ -173,6 +190,14 @@ python classify_projects.py
   - .env.testing - 测试环境配置
   - .env.production - 生产环境配置
 - 确保团队成员都知道需要创建自己的 .env 文件
+
+## 前端看板（`index.html`）
+
+- 入口：在仓库根目录通过本地 HTTP 服务访问 `http://localhost:8000/index.html`
+- 菜单：左侧切换“近期开标”和“最新公告”两大视图
+- 筛选：支持“搜索关键字”“项目类型”“发布日期/截止时间/开标日期”筛选
+- 详情：公告卡片可打开“查看详情/采购内容”弹窗，支持复制
+- 原文：每个条目提供“查看原文”跳转到阳光采购平台
 
 ## 输出数据格式
 
@@ -187,7 +212,11 @@ python classify_projects.py
             "kbDate": "YYYY-MM-DD",
             "prjName": "项目名称",
             "bulletinId": "公告ID",
-            "prjType": "项目类型"
+            "prjId": "项目ID（可能存在）",
+            "prjNo": "项目编号（可能存在）",
+            "prjUrl": "详情地址（基于 prjId 或 bulletinId 生成）",
+            "prjType": "项目类型",
+            "prjContent": "项目采购内容摘要（可选，执行抽取后写入）"
         }
     ]
 }
@@ -205,8 +234,11 @@ python classify_projects.py
     "endDate": "YYYY-MM-DDTHH:MM:SS",
     "prjNo": "项目编号",
     "kbDate": "YYYY-MM-DDTHH:MM:SS",
-    "bulletinId": "原站点的autoId/id/bulletinId（字符串化）",
-    "prjType": "项目类型（分类后写入）"
+    "bulletinId": "原站点的 autoId/id/bulletinId（字符串化）",
+    "prjId": "项目ID（可能存在）",
+    "prjUrl": "详情地址（固定使用 bulletinId 链接）",
+    "prjType": "项目类型（分类后写入）",
+    "prjContent": "项目采购内容摘要（可选，执行抽取后写入）"
   }
 ]
 ```
@@ -218,3 +250,21 @@ python classify_projects.py
 - 需要安装 requirements.txt 中列出的依赖包
 - API key 请妥善保管，不要直接提交到代码中
 - 本地开发时建议使用 .env 文件管理环境变量
+- 如直接双击打开 `index.html` 读取本地 JSON 可能受浏览器 CORS/本地策略限制，请使用 `python -m http.server` 启动本地服务
+
+## 实用工具
+
+- 清理 `prjContent` 字段：
+  - 将两个 JSON 中已有的 `prjContent` 批量置空（便于重新抽取）
+  - 示例：
+    ```bash
+    # 同时清理两个文件
+    python clear_prj_content.py
+
+    # 指定文件名
+    python clear_prj_content.py --openings opening_projects.json --bulletins purchase_bulletins.json
+
+    # 只清理其中一个
+    python clear_prj_content.py --only openings
+    python clear_prj_content.py --only bulletins
+    ```

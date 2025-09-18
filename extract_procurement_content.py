@@ -91,6 +91,151 @@ def fetch_page_text(url: str, timeout: int = DEFAULT_TIMEOUT) -> Optional[str]:
         return None
 
 
+def fetch_opening_inquire_text(prj_id: str, timeout: int = DEFAULT_TIMEOUT) -> Optional[str]:
+    """
+    通过近期开标接口获取在线答疑/询问内容：
+    GET https://ygcg.nbcqjy.org:8075/api/Notoken/GetOnlineInquire?PrjId=<prj_id>
+
+    返回可能是 JSON 或 HTML，做尽量健壮的解析并转为纯文本。
+    """
+    if not prj_id:
+        return None
+    url = f"https://ygcg.nbcqjy.org:8075/api/Notoken/GetOnlineInquire?PrjId={prj_id}"
+    try:
+        resp = requests.get(url, headers={"User-Agent": HEADERS["User-Agent"], "Accept": "*/*"}, timeout=timeout, verify=True)
+        resp.raise_for_status()
+        # 优先尝试 JSON，按固定路径 Body.Data.Remark（或 PrjContent）提取
+        try:
+            data = resp.json()
+            body = data.get("Body") if isinstance(data, dict) else None
+            detail = body.get("Data") if isinstance(body, dict) else None
+            # 首选 Remark
+            remark = detail.get("Remark") if isinstance(detail, dict) else None
+            if isinstance(remark, str) and remark.strip():
+                return html_to_text(remark)
+            # 备选 PrjContent
+            prj_content = detail.get("PrjContent") if isinstance(detail, dict) else None
+            if isinstance(prj_content, str) and prj_content.strip():
+                return html_to_text(prj_content)
+
+            # 若固定字段未取到，则进行兜底遍历
+            text_candidates: List[str] = []
+
+            def walk(v: Any):
+                if isinstance(v, dict):
+                    for k, vv in v.items():
+                        if isinstance(vv, (dict, list)):
+                            walk(vv)
+                        elif isinstance(vv, str):
+                            if any(x in k.lower() for x in ["remark", "prjcontent", "content", "html", "memo", "desc", "inquire", "text"]):
+                                text_candidates.append(vv)
+                elif isinstance(v, list):
+                    for it in v:
+                        walk(it)
+                elif isinstance(v, str):
+                    text_candidates.append(v)
+
+            walk(data)
+            merged = "\n".join([t for t in text_candidates if t and isinstance(t, str)])
+            merged = merged.strip()
+            if merged:
+                return html_to_text(merged)
+        except ValueError:
+            # 非 JSON，当作 HTML 文本处理
+            pass
+        # 如果不是 JSON 或没取到内容，按纯文本/HTML处理
+        resp.encoding = resp.apparent_encoding or resp.encoding or "utf-8"
+        return html_to_text(resp.text)
+    except Exception as e:
+        print(f"[WARN] 开标接口请求失败: {url} -> {e}")
+        return None
+
+
+def fetch_bulletin_text(auto_id: str, timeout: int = DEFAULT_TIMEOUT) -> Optional[str]:
+    """
+    调用公告详情接口：
+    POST https://ygcg.nbcqjy.org/api/Portal/GetBulletinContent
+    Body: {"autoID": <bulletinId>}
+
+    尽量从响应中提取正文内容（HTML 或文本），并转为纯文本。
+    """
+    if not auto_id:
+        return None
+    url = "https://ygcg.nbcqjy.org/api/Portal/GetBulletinContent"
+    headers = {
+        "Content-Type": "application/json;charset=UTF-8",
+        "User-Agent": HEADERS["User-Agent"],
+        "Accept": "application/json, text/plain, */*",
+    }
+    try:
+        resp = requests.post(url, headers=headers, data=json.dumps({"autoID": auto_id}), timeout=timeout)
+        resp.raise_for_status()
+
+        # 优先尝试 JSON
+        try:
+            data = resp.json()
+            # 1) 明确路径：data.body.data.article.bulletinContent（或大小写变体）
+            def get_case_insensitive(d: Any, key: str) -> Any:
+                if not isinstance(d, dict):
+                    return None
+                for k, v in d.items():
+                    if isinstance(k, str) and k.lower() == key.lower():
+                        return v
+                return None
+
+            article = None
+            root = data
+            level = get_case_insensitive(root, "body") or get_case_insensitive(root, "Body")
+            if level is not None:
+                level = get_case_insensitive(level, "data") or get_case_insensitive(level, "Data")
+                if level is not None:
+                    article = get_case_insensitive(level, "article") or get_case_insensitive(level, "Article")
+            if isinstance(article, dict):
+                bc = get_case_insensitive(article, "bulletinContent")
+                if isinstance(bc, str) and bc.strip():
+                    return html_to_text(bc)
+
+            # 2) 备选：Body.Data.BulletinContent（另一种结构）
+            body_alt = get_case_insensitive(root, "body") or get_case_insensitive(root, "Body")
+            data_alt = get_case_insensitive(body_alt, "data") or get_case_insensitive(body_alt, "Data") if isinstance(body_alt, dict) else None
+            bc2 = get_case_insensitive(data_alt, "bulletinContent") if isinstance(data_alt, dict) else None
+            if isinstance(bc2, str) and bc2.strip():
+                return html_to_text(bc2)
+
+            # 3) 仍未取到，兜底遍历常见字段
+            text_candidates: List[str] = []
+
+            def walk(v: Any):
+                if isinstance(v, dict):
+                    for k, vv in v.items():
+                        if isinstance(vv, (dict, list)):
+                            walk(vv)
+                        elif isinstance(vv, str):
+                            if any(x in k.lower() for x in ["bulletincontent", "content", "html", "body", "remark", "desc", "text"]):
+                                text_candidates.append(vv)
+                elif isinstance(v, list):
+                    for it in v:
+                        walk(it)
+                elif isinstance(v, str):
+                    text_candidates.append(v)
+
+            walk(data)
+            merged = "\n".join([t for t in text_candidates if t and isinstance(t, str)])
+            merged = merged.strip()
+            if merged:
+                return html_to_text(merged)
+        except ValueError:
+            # 非 JSON，当作 HTML 文本处理
+            pass
+
+        # 退路：按文本/HTML 处理
+        resp.encoding = resp.apparent_encoding or resp.encoding or "utf-8"
+        return html_to_text(resp.text)
+    except Exception as e:
+        print(f"[WARN] 公告接口请求失败: {url} -> {e}")
+        return None
+
+
 # LLM 提取“项目采购内容”
 EXTRACT_PROMPT_TEMPLATE = (
     """
@@ -133,7 +278,26 @@ class LLMExtractor:
                 top_p=0.1,
             )
             raw = resp.choices[0].message.content
-            data = json.loads(raw)
+            # 清洗模型输出，处理 ```json ... ``` 或多余文本
+            cleaned = (raw or "").strip()
+            if cleaned.startswith("```"):
+                # 去掉围栏
+                cleaned = cleaned.strip("`")
+                # 可能以 json\n 开头
+                if cleaned.lower().startswith("json\n"):
+                    cleaned = cleaned[5:]
+            # 截取第一个 { 到最后一个 }
+            if "{" in cleaned and "}" in cleaned:
+                start = cleaned.find("{")
+                end = cleaned.rfind("}") + 1
+                cleaned = cleaned[start:end]
+            try:
+                data = json.loads(cleaned)
+            except Exception as je:
+                preview = (raw or "")[:500]
+                print(f"[DEBUG] LLM 原始输出预览: {preview}")
+                print(f"[DEBUG] 清洗后待解析: {cleaned[:500]}")
+                raise je
             content = data.get("prjContent")
             if isinstance(content, str) and content.strip():
                 return content.strip()
@@ -163,19 +327,20 @@ def process_opening_projects(extractor: LLMExtractor, path: str = "opening_proje
         prj_type = item.get("prjType")
         if not need_process(prj_type, item.get("prjContent")):
             continue
-        url = item.get("prjUrl")
-        title = item.get("prjName")
+        prj_id = item.get("prjId")
+        title = item.get("prjName") or item.get("prjNo")
         total += 1
-        print(f"[OPENING] 抓取: {title} -> {url}")
-        text = fetch_page_text(url)
+        print(f"[OPENING] 抓取(接口): {title} -> prjId={prj_id}")
+        text = fetch_opening_inquire_text(prj_id)
         if not text:
             print("[OPENING] 抓取失败，跳过")
             continue
+        print(f"[DEBUG][OPENING] 正文预览: {text[:500]}")
         content = extractor.extract(text, title=title)
         if content:
             item["prjContent"] = content
             updated += 1
-            print("[OPENING] 已更新 prjContent")
+            print(f"[OPENING] 已更新 prjContent: {content}")
         else:
             print("[OPENING] 未能从正文抽取到有效内容")
         time.sleep(rate_sleep)
@@ -193,24 +358,25 @@ def process_purchase_bulletins(extractor: LLMExtractor, path: str = "purchase_bu
         prj_type = item.get("prjType")
         if not need_process(prj_type, item.get("prjContent")):
             continue
-        url = item.get("prjUrl")
-        title = item.get("bulletinTitle") or item.get("title")
+        auto_id = item.get("bulletinId")
+        title = item.get("bulletinTitle") or item.get("title") or item.get("prjName")
         total += 1
-        print(f"[BULLETIN] 抓取: {title} -> {url}")
-        text = fetch_page_text(url)
+        print(f"[BULLETIN] 抓取(接口): {title} -> autoID={auto_id}")
+        text = fetch_bulletin_text(auto_id)
         if not text:
-            print("[BULLETIN] 抓取失败，尝试从 bulletinContent 提取")
-            # 退路：有些文件本身就包含 HTML 内容字段
+            print("[BULLETIN] 接口抓取失败，尝试从本地字段 bulletinContent 提取")
             html = item.get("bulletinContent")
             text = html_to_text(html) if isinstance(html, str) else None
             if not text:
                 print("[BULLETIN] 无可用正文，跳过")
                 continue
+        print(f"[DEBUG][BULLETIN] 正文预览: {text[:500]}")
+        # 使用 LLM 对正文进行“项目采购内容”提炼
         content = extractor.extract(text, title=title)
         if content:
             item["prjContent"] = content
             updated += 1
-            print("[BULLETIN] 已更新 prjContent")
+            print(f"[BULLETIN] 已更新 prjContent(LLM): {content}")
         else:
             print("[BULLETIN] 未能从正文抽取到有效内容")
         time.sleep(rate_sleep)
