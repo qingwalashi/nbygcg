@@ -1,17 +1,7 @@
 {
-    "today": "2025-09-21",
-    "future_date": "2025-09-22",
+    "today": "2025-09-22",
+    "future_date": "2025-09-23",
     "projects": [
-        {
-            "kbDate": "2025-09-22",
-            "prjName": "宁波市水务环境集团2025年低温干化污泥设备运维项目",
-            "bulletinId": "21e7bc63-3e0f-4d7c-8cfc-441f448d570f",
-            "prjId": "M3302005195025994001",
-            "prjNo": "GC2025JC05045",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025994001",
-            "prjType": "信息化服务类项目",
-            "prjContent": null
-        },
         {
             "kbDate": "2025-09-22",
             "prjName": "卖水弄6号维修项目",
@@ -30,6 +20,16 @@
             "prjNo": "GC2025JC05151",
             "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026124001",
             "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-22",
+            "prjName": "宁波市水务环境集团2025年低温干化污泥设备运维项目",
+            "bulletinId": "21e7bc63-3e0f-4d7c-8cfc-441f448d570f",
+            "prjId": "M3302005195025994001",
+            "prjNo": "GC2025JC05045",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025994001",
+            "prjType": "信息化服务类项目",
             "prjContent": null
         },
         {
@@ -84,12 +84,42 @@
         },
         {
             "kbDate": "2025-09-22",
+            "prjName": "宁波市演艺集团有限公司舞美器材采购项目",
+            "bulletinId": "3967caea-124f-4238-bc26-8ce679d7eb76",
+            "prjId": "M3302005195026000001",
+            "prjNo": "GC2025JC05032",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026000001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-22",
+            "prjName": "招宝山饭店布草洗涤采购项目",
+            "bulletinId": "d5372d4a-8eaf-4a7f-8ec1-de492729ae45",
+            "prjId": "M3302005195025911001",
+            "prjNo": "GC2025JC04947",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025911001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-22",
             "prjName": "前湾海悦·首旅南苑酒店保洁外包项目",
             "bulletinId": "8d11cb8c-cdd5-42a6-a19d-73857824e188",
             "prjId": "M3302005195026085001",
             "prjNo": "GC2025JC05105",
             "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026085001",
             "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-22",
+            "prjName": "两江会馆综合楼供热改造一次网工程（红线外部分）",
+            "bulletinId": "16048aff-85fd-4fa2-8738-7d3c437e74f5",
+            "prjId": "M3302005195026134001",
+            "prjNo": "GC2025JC05198",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026134001",
+            "prjType": "工程类项目",
             "prjContent": null
         },
         {
@@ -144,42 +174,12 @@
         },
         {
             "kbDate": "2025-09-22",
-            "prjName": "两江会馆综合楼供热改造一次网工程（红线外部分）",
-            "bulletinId": "16048aff-85fd-4fa2-8738-7d3c437e74f5",
-            "prjId": "M3302005195026134001",
-            "prjNo": "GC2025JC05198",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026134001",
-            "prjType": "工程类项目",
-            "prjContent": null
-        },
-        {
-            "kbDate": "2025-09-22",
             "prjName": "梅山湾生命健康科创园项目（一期）外线电力接入工程",
             "bulletinId": "ec4c16b2-47d7-492f-a91d-eb5b3970f9a8",
             "prjId": "M3302005195025670001",
             "prjNo": "GC2025JC04740",
             "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025670001",
             "prjType": "工程类项目",
-            "prjContent": null
-        },
-        {
-            "kbDate": "2025-09-22",
-            "prjName": "宁波市演艺集团有限公司舞美器材采购项目",
-            "bulletinId": "3967caea-124f-4238-bc26-8ce679d7eb76",
-            "prjId": "M3302005195026000001",
-            "prjNo": "GC2025JC05032",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026000001",
-            "prjType": "其他项目",
-            "prjContent": null
-        },
-        {
-            "kbDate": "2025-09-22",
-            "prjName": "招宝山饭店布草洗涤采购项目",
-            "bulletinId": "d5372d4a-8eaf-4a7f-8ec1-de492729ae45",
-            "prjId": "M3302005195025911001",
-            "prjNo": "GC2025JC04947",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025911001",
-            "prjType": "其他项目",
             "prjContent": null
         },
         {
@@ -224,46 +224,6 @@
         },
         {
             "kbDate": "2025-09-22",
-            "prjName": "新兴产业园高发南侧绿化带工程勘察设计(重发)",
-            "bulletinId": "f124d51c-bc3e-4556-bc14-50617a8102aa",
-            "prjId": "M3302005195026058001",
-            "prjNo": "GC2025JC05083",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026058001",
-            "prjType": "工程类项目",
-            "prjContent": null
-        },
-        {
-            "kbDate": "2025-09-22",
-            "prjName": "和义大道购物中心2025年度保洁外包服务项目",
-            "bulletinId": "fbcb704a-2a9e-4463-bdf8-769c813918d4",
-            "prjId": "M3302005195026029001",
-            "prjNo": "GC2025JC05063",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026029001",
-            "prjType": "其他项目",
-            "prjContent": null
-        },
-        {
-            "kbDate": "2025-09-22",
-            "prjName": "公款存放服务银行采购项目",
-            "bulletinId": "adfa5cfc-7877-4f29-9bd6-1d8cc3446b3b",
-            "prjId": "M3302005195026045001",
-            "prjNo": "GC2025JC05084",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026045001",
-            "prjType": "其他项目",
-            "prjContent": null
-        },
-        {
-            "kbDate": "2025-09-22",
-            "prjName": "前湾海悦·首旅南苑酒店餐饮部酒水采购项目",
-            "bulletinId": "18925d0d-f5b6-4c39-8e2e-a9d812d7c560",
-            "prjId": "M3302005195026082001",
-            "prjNo": "GC2025JC05104",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026082001",
-            "prjType": "其他项目",
-            "prjContent": null
-        },
-        {
-            "kbDate": "2025-09-22",
             "prjName": "南苑望海酒店布草洗涤采购项目",
             "bulletinId": "9f5ebd30-2081-471d-bef1-9f3ebb0cb73e",
             "prjId": "M3302005195025910001",
@@ -304,12 +264,32 @@
         },
         {
             "kbDate": "2025-09-22",
-            "prjName": "宁波华润兴光燃气有限公司2026年度双环氧无缝钢管采购项目招标公告",
-            "bulletinId": "94e0755a-ba2e-4ad7-82c8-df698a07bc83",
-            "prjId": "M3302005195025977001",
-            "prjNo": "GC2025JC05016",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025977001",
+            "prjName": "新兴产业园高发南侧绿化带工程勘察设计(重发)",
+            "bulletinId": "f124d51c-bc3e-4556-bc14-50617a8102aa",
+            "prjId": "M3302005195026058001",
+            "prjNo": "GC2025JC05083",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026058001",
             "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-22",
+            "prjName": "和义大道购物中心2025年度保洁外包服务项目",
+            "bulletinId": "fbcb704a-2a9e-4463-bdf8-769c813918d4",
+            "prjId": "M3302005195026029001",
+            "prjNo": "GC2025JC05063",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026029001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-22",
+            "prjName": "公款存放服务银行采购项目",
+            "bulletinId": "adfa5cfc-7877-4f29-9bd6-1d8cc3446b3b",
+            "prjId": "M3302005195026045001",
+            "prjNo": "GC2025JC05084",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026045001",
+            "prjType": "其他项目",
             "prjContent": null
         },
         {
@@ -334,13 +314,13 @@
         },
         {
             "kbDate": "2025-09-22",
-            "prjName": "防火墙、SSL VPN、堡垒机采购",
-            "bulletinId": "3dacd612-68f4-46c1-b80e-dea2ff9cc985",
-            "prjId": "M3302005195026090001",
-            "prjNo": "GC2025JC05201",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026090001",
-            "prjType": "信息化软硬件采购类项目",
-            "prjContent": "防火墙、SSL VPN、堡垒机采购。数量或范围未明确。交付内容包括设备的上架安装集成服务，并配合甲方完成相关安全评测。交货期为合同签订后七日内，交货地点为甲方指定地点。技术支持服务及质保期为三年。"
+            "prjName": "宁波华润兴光燃气有限公司2026年度双环氧无缝钢管采购项目招标公告",
+            "bulletinId": "94e0755a-ba2e-4ad7-82c8-df698a07bc83",
+            "prjId": "M3302005195025977001",
+            "prjNo": "GC2025JC05016",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025977001",
+            "prjType": "工程类项目",
+            "prjContent": null
         },
         {
             "kbDate": "2025-09-22",
@@ -364,11 +344,351 @@
         },
         {
             "kbDate": "2025-09-22",
+            "prjName": "防火墙、SSL VPN、堡垒机采购",
+            "bulletinId": "3dacd612-68f4-46c1-b80e-dea2ff9cc985",
+            "prjId": "M3302005195026090001",
+            "prjNo": "GC2025JC05201",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026090001",
+            "prjType": "信息化软硬件采购类项目",
+            "prjContent": "防火墙、SSL VPN、堡垒机采购。数量或范围未明确。主要模块包括设备的上架安装集成服务和配合甲方完成相关安全评测内容。交付内容包含硬件设备及相关服务。交货期为合同签订后七日内。交货地点为甲方要求地点。技术支持服务及质保期为三年。"
+        },
+        {
+            "kbDate": "2025-09-22",
             "prjName": "五龙潭公司“十一”宣传活动",
             "bulletinId": "5353cede-ef87-44b9-ada7-4657b933e841",
             "prjId": "M3302005195026198001",
             "prjNo": "GC2025JC05228",
             "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026198001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "开明街89号房屋废旧物资资产评估服务采购",
+            "bulletinId": "562f0c56-65fe-4a0d-ba83-0c521107327b",
+            "prjId": "M3302005195026205001",
+            "prjNo": "GC2025JC05240",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026205001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "秀水街酒店项目招标代理服务（勘察设计）",
+            "bulletinId": "c9889b61-1a8f-4945-bc94-0764639938de",
+            "prjId": "M3302005195026213001",
+            "prjNo": "GC2025JC05238",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026213001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "宁波市水务环境集团2025年办公设备采购项目",
+            "bulletinId": "e3649320-a550-4246-985b-1a4ac8ae9019",
+            "prjId": "M3302005195026033001",
+            "prjNo": "GC2025JC05075",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026033001",
+            "prjType": "信息化软硬件采购类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "宁波市水务环境集团2025年工程监理 项目（水利）",
+            "bulletinId": "6d6a0c76-f0b5-4da0-954f-afb3ecf4db5d",
+            "prjId": "M3302005195026031001",
+            "prjNo": "GC2025JC05077",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026031001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "宁波前湾新区数字图书馆及机房信息化设备采购和网络安全运维服务项目",
+            "bulletinId": "f707d010-6594-42fc-9883-1382b73d037a",
+            "prjId": "M3302005195026065001",
+            "prjNo": "GC2025JC05085",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026065001",
+            "prjType": "信息化软硬件采购类项目",
+            "prjContent": "项目包括数字图书馆及机房信息化设备采购和网络安全运维服务。具体采购内容涉及信息化设备（未详细列出具体设备名称和数量），以及网络安全运维服务。"
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "北仑少儿悦享空间项目补充采购项目",
+            "bulletinId": "60ac8847-2a0b-49ca-8c05-beda029af7f9",
+            "prjId": "M3302005195026074001",
+            "prjNo": "GC2025JC05136",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026074001",
+            "prjType": "信息化软硬件采购类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "“去慈城赶集”项目",
+            "bulletinId": "b0b9a675-9678-41bb-8ce2-18b0cb76dc41",
+            "prjId": "M3302005195026092001",
+            "prjNo": "GC2025JC05134",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026092001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "宁波前湾新区南洋小城如海公寓、滨海新城如海人才公寓、世纪城如海公寓物业管理服务项目",
+            "bulletinId": "063b282e-963e-4955-acab-a5d1c31fdc45",
+            "prjId": "M3302005195026095001",
+            "prjNo": "GC2025JC05120",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026095001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "宁波奥体中心体育馆 LED 照明灯具采购",
+            "bulletinId": "4e441297-0227-478f-9dd2-3d8eae4ab7b9",
+            "prjId": "M3302005195026233001",
+            "prjNo": "GC2025JC05256",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026233001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "宁波市轨道交通物产置业有限公司2025年明楼站地块项目安全风险专项评估服务",
+            "bulletinId": "75fc32dc-7804-49cf-b2ed-391eac5b0221",
+            "prjId": "M3302005195025980001",
+            "prjNo": "GC2025JC05027",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025980001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "绕城高速管廊工程管片试验检测",
+            "bulletinId": "9114eb2f-2bec-4f04-879c-522dd0590b81",
+            "prjId": "M3302005195025967001",
+            "prjNo": "GC2025JC05100",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025967001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "南北大道（五乡中路-环城南路东延）涉铁段试验检测",
+            "bulletinId": "ed73ad62-87cc-41d4-9f6b-bd872fb8fd88",
+            "prjId": "M3302005195026001001",
+            "prjNo": "GC2025JC05068",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026001001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "2025宁波前湾音乐节·乐再扶摇安保服务采购",
+            "bulletinId": "e3f505d3-a3fb-4f0b-b7fd-c8e4446391af",
+            "prjId": "M3302005195025934001",
+            "prjNo": "GC2025JC05112",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025934001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "宁波市水务环境集团2025年瓶装水标签材料采购项目",
+            "bulletinId": "70627951-d2d4-48f4-b292-20969f756130",
+            "prjId": "M3302005195026012001",
+            "prjNo": "GC2025JC05079",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026012001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "企业年金受托管理项目",
+            "bulletinId": "8b5a3a97-efda-4f1f-a212-a75720147963",
+            "prjId": "M3302005195026016001",
+            "prjNo": "GC2025JC05080",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026016001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "2025-2027年度保洁设备维保服务",
+            "bulletinId": "a62cb968-d0a7-4908-8990-350f2b4507b9",
+            "prjId": "M3302005195025476001",
+            "prjNo": "GC2025JC04562",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025476001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "海曙区西片区三乡镇给水主干管工程Ⅳ标段（毛家坪出厂管段与沿途加压泵站）施工",
+            "bulletinId": "b67c97d2-8a56-4d15-a834-eb6e8a22a468",
+            "prjId": "M3302005195025714001",
+            "prjNo": "GC2025JC04784",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025714001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "轨道交通运营一体化综合管理研发技术服务项目",
+            "bulletinId": "3bc12f84-d2ee-447f-abfc-51ad106ebd3e",
+            "prjId": "M3302005195025736001",
+            "prjNo": "GC2025JC04789",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025736001",
+            "prjType": "信息化服务类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "东部新城核心区B1-3-2#地块项目会议系统采购及相关服务",
+            "bulletinId": "76c85edc-6969-4244-99fe-c9fbff8cd726",
+            "prjId": "M3302005195025783001",
+            "prjNo": "GC2025JC04841",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025783001",
+            "prjType": "信息化软硬件采购类项目",
+            "prjContent": "会议系统采购及相关服务，包括深化设计、制造、运输、装卸、就位、安装、调试、成品保护、检测验收、现场保洁、培训、保修及售后服务。"
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "2025年10月至2026年3月东海半边山旅游度假区蔬菜肉禽水产品食材采购项目",
+            "bulletinId": "d450e42e-004f-4230-9de7-cd7bd307115c",
+            "prjId": "M3302005195026206001",
+            "prjNo": "GC2025JC05233",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026206001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "2025年10月至2026年3月东海半边山旅游度假区烧烤食材采购项目",
+            "bulletinId": "f24a7f95-fab6-49c3-8521-518012d11cc9",
+            "prjId": "M3302005195026210001",
+            "prjNo": "GC2025JC05234",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026210001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "互联铁路工程（宁波）有限公司宁海分公司蒸汽发生器采购（第二次）",
+            "bulletinId": "d23c271a-3e84-48cc-b256-b7601e40bbaa",
+            "prjId": "M3302005195026142001",
+            "prjNo": "GC2025JC05195",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026142001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "2025宁波前湾音乐节·乐再扶摇场地相关设施设备服务采购",
+            "bulletinId": "0864a11f-41d5-424d-bc9c-35ec38f1ecbe",
+            "prjId": "M3302005195025935001",
+            "prjNo": "GC2025JC05113",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025935001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "海曙区LHSM基金公司资产评估",
+            "bulletinId": "eef7f3b6-7cfb-41c8-a9cf-db330b54d95f",
+            "prjId": "M3302005195026228001",
+            "prjNo": "GC2025JC05252",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026228001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "海曙区雄镇租赁住房项目（HS07-04-30-b 地块）幕墙检测服务采购",
+            "bulletinId": "50eea7a1-4121-4bde-90dc-2ff8bde085b6",
+            "prjId": "M3302005195026207001",
+            "prjNo": "GC2025JC05230",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026207001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "梅山街道集卡运输企业自用柴油橇装式加油装置场地设置项目",
+            "bulletinId": "7b5bdeb0-a456-4127-a67d-07a5efcb7b4f",
+            "prjId": "M3302005195026007001",
+            "prjNo": "GC2025JC05061",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026007001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "市域铁路公司2025年观影服务（重发）",
+            "bulletinId": "f2de113a-175d-4bd3-bd59-dabfdd9adc50",
+            "prjId": "M3302005195026009001",
+            "prjNo": "GC2025JC05067",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026009001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "宁波市水务环境集团2025年龙门往复式洗车机采购项目",
+            "bulletinId": "9c06a2a8-cd5d-4031-a142-a33e7f5a731f",
+            "prjId": "M3302005195026072001",
+            "prjNo": "GC2025JC05106",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026072001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "宁波前湾新区御海酒店管理有限公司海沧路酒店账户开立项目",
+            "bulletinId": "48948422-6412-4300-a84e-82a20f75461b",
+            "prjId": "M3302005195026043001",
+            "prjNo": "GC2025JC05069",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026043001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "慈城新城酒店地块（CC09-03-01b）建设项目家具采购项目",
+            "bulletinId": "d03c7c99-555c-4ffa-a50f-3338e9854d1c",
+            "prjId": "M3302005195025723001",
+            "prjNo": "GC2025JC04787",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195025723001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "宁波杭州湾新区海创实业有限公司品牌整合策划及设计服务",
+            "bulletinId": "923257fb-4b38-4acb-9dd6-6275e3a8f683",
+            "prjId": "M3302005195026227001",
+            "prjNo": "GC2025JC05253",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026227001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "国庆非遗文化周活动",
+            "bulletinId": "face090e-94f8-4aeb-ac3f-e5f457e5f749",
+            "prjId": "M3302005195026237001",
+            "prjNo": "GC2025JC05259",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026237001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-09-23",
+            "prjName": "宁波市城隍庙片区开明坊项目财务决算编制",
+            "bulletinId": "e4e91ecd-bef5-43e2-9267-7f2924e27ef7",
+            "prjId": "M3302005195026248001",
+            "prjNo": "GC2025JC05264",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026248001",
             "prjType": "其他项目",
             "prjContent": null
         }
