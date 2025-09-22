@@ -98,11 +98,10 @@ def generate_push_content(yesterday_bulletins: Dict[str, List[Dict]], tomorrow_p
             for it in items:
                 title = it.get('bulletinTitle') or it.get('title') or '未命名项目'
                 kb_display = parse_iso_to_display(it.get('kbDate') or '')
-                prj_id = it.get('prjId')
-                url = (
-                    f"https://ygcg.nbcqjy.org/detail?type=1&prjId={urllib.parse.quote(prj_id)}"
-                    if prj_id else f"https://ygcg.nbcqjy.org/detail?bulletinId={it.get('bulletinId')}"
-                )
+                # 仅使用 JSON 中的 prjUrl 字段；若无则跳过该条目
+                url = it.get('prjUrl')
+                if not url:
+                    continue
                 if kb_display:
                     lines.append(f"- [{title}]({url})（开标：{kb_display}）")
                 else:
@@ -128,11 +127,10 @@ def generate_push_content(yesterday_bulletins: Dict[str, List[Dict]], tomorrow_p
                 continue
             lines.append(f"#### {pt}")
             for project in items:
-                prj_id = project.get('prjId')
-                project_url = (
-                    f"https://ygcg.nbcqjy.org/detail?type=1&prjId={urllib.parse.quote(prj_id)}"
-                    if prj_id else f"https://ygcg.nbcqjy.org/detail?bulletinId={project.get('bulletinId')}"
-                )
+                # 仅使用 JSON 中的 prjUrl 字段；若无则跳过该条目
+                project_url = project.get('prjUrl')
+                if not project_url:
+                    continue
                 lines.append(f"- [{project['prjName']}]({project_url})")
                 # 追加采购内容 prjContent（若存在），为避免过长，进行适度截断并以引用展示
                 prj_content = (project.get('prjContent') or '').strip()
