@@ -1,16 +1,5 @@
 {
-    "today": "2025-10-02",
-    "future_date": "2025-10-03",
-    "projects": [
-        {
-            "kbDate": "2025-10-02",
-            "prjName": "杭州湾新区九塘路5号办公楼1#电梯维保项目",
-            "bulletinId": "bcd892e2-cd39-475b-91df-e56fa787e6c4",
-            "prjId": "M3302005195026211001",
-            "prjNo": "GC2025JC05409",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026211001",
-            "prjType": "其他项目",
-            "prjContent": null
-        }
-    ]
+    "today": "2025-10-03",
+    "future_date": "2025-10-04",
+    "projects": []
 }
