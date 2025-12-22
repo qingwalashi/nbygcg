@@ -1,6 +1,6 @@
 {
-    "today": "2025-12-21",
-    "future_date": "2025-12-22",
+    "today": "2025-12-22",
+    "future_date": "2025-12-23",
     "projects": [
         {
             "kbDate": "2025-12-22",
@@ -441,6 +441,326 @@
             "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028786001",
             "prjType": "信息化建设类项目",
             "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "县前街61号、灵桥路229等办公区域升级改造工程（竣工财务决算编制）",
+            "bulletinId": "9bccc8e0-4617-49db-b8fc-2390226feda6",
+            "prjId": "M3302005195028599001",
+            "prjNo": "GC2025JC07437",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028599001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "海曙区永寿街（文昌街-孝闻街）整治提升工程（工程造价咨询）",
+            "bulletinId": "b29f7529-4591-4076-89fb-247b4af680e3",
+            "prjId": "M3302005195028792001",
+            "prjNo": "GC2025JC07640",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028792001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波望春工业发展有限公司办公家具采购",
+            "bulletinId": "5fb004ee-f982-4dcb-af27-12d18cb43e6e",
+            "prjId": "M3302005195028797001",
+            "prjNo": "GC2025JC07649",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028797001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "浙江路锋交通建设有限公司沥青路面服务项目（子包一、子包二、子包三）",
+            "bulletinId": "1cf22076-7e5a-453c-99f0-a0d479ffef53",
+            "prjId": "M3302005195026444001",
+            "prjNo": "GC2025JC07464",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195026444001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波华润兴光燃气有限公司2026-2027年度劳务派遣项目（含宁波兴光燃气集团有限公司下属子公司）",
+            "bulletinId": "06918d98-e3d6-4ba3-9dc7-a728a10a1070",
+            "prjId": "M3302005195028714001",
+            "prjNo": "GC2025JC07584",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028714001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波市海曙区雄镇地块安置房东侧（鄞奉路-河道）道路工程",
+            "bulletinId": "ae30c9ee-7a9a-47c4-a156-f4f134059cf1",
+            "prjId": "M3302005195028791001",
+            "prjNo": "GC2025JC07638",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028791001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波市轨道交通智慧运营分公司2026-2029年计量器具检测服务项目",
+            "bulletinId": "8837a0fd-71ac-4360-bcab-359472fe3f51",
+            "prjId": "M3302005195028071001",
+            "prjNo": "GC2025JC07011",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028071001",
+            "prjType": "信息化服务类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波市公共交通集团有限公司2026-2028年度小额工程项目施工协议单位采购",
+            "bulletinId": "26f69249-0a05-42d6-9cf4-e637ab26a5eb",
+            "prjId": "M3302005195028408001",
+            "prjNo": "GC2025JC07442",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028408001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "甬蚌合作产业园物业管理服务",
+            "bulletinId": "4fa765a4-a963-4b65-bed4-657cda724b9e",
+            "prjId": "M3302005195028427001",
+            "prjNo": "GC2025JC07541",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028427001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "海曙区HS14-01-1d地块2026-2028年网络运营服务",
+            "bulletinId": "424b4303-42bf-479f-b1a9-da14272afe96",
+            "prjId": "M3302005195028438001",
+            "prjNo": "GC2025JC07360",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028438001",
+            "prjType": "信息化服务类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "杭州湾跨海大桥北岸服务区2026-2028两保服务采购项目",
+            "bulletinId": "94d0f506-da4d-40a6-808f-3f29f277cdc1",
+            "prjId": "M3302005195028463001",
+            "prjNo": "GC2025JC07402",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028463001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "梅山港口基础设施重点项目配套道路一期工程-公安治安监控",
+            "bulletinId": "6b008591-dc9b-4eb4-a19a-c79267a82bfa",
+            "prjId": "M3302005195028490001",
+            "prjNo": "GC2025JC07462",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028490001",
+            "prjType": "信息化建设类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波高新区市政环境服务有限公司新能源重型二轴收集车（8吨）采购项目(重发)",
+            "bulletinId": "9fe01bb2-a4c1-4c96-8a32-cc899b774eff",
+            "prjId": "M3302005195028523001",
+            "prjNo": "GC2025JC07452",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028523001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "人防工程数字化运维管理平台（二期）项目",
+            "bulletinId": "6ac1c910-261e-4d94-bae0-4cc4f7686d7b",
+            "prjId": "M3302005195028561001",
+            "prjNo": "GC2025JC07530",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028561001",
+            "prjType": "信息化建设类项目",
+            "prjContent": "人防工程数字化运维管理平台（二期）系统的开发、部署、测试、培训及售后维护服务。主要内容包括：1. 可视化数据仓，查看区县市全部人防工程数据；2. 工程、合同、业主、租赁、缴费等多模块数据互通；3. 合同管理接入8类合同，设到期、开票提醒；4. 移动端新增流程审批功能；5. 与短信平台、小程序消息推送平台、电子签章平台、收款开票平台、车场停车系统、甬城泊车平台等多平台协同对接；6. 购买短信服务、电子云签章及配套信创环境软件。"
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "通商新大楼智慧应用项目",
+            "bulletinId": "ba71ea2c-bdcd-4f9c-bbb5-c32e1939172d",
+            "prjId": "M3302005195028623001",
+            "prjNo": "GC2025JC07485",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028623001",
+            "prjType": "信息化建设类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波通商控股集团有限公司财务中介合格供应商库入围项目(2026年-2028年）",
+            "bulletinId": "79431e69-d0aa-46ef-92a2-ffa86f326eb0",
+            "prjId": "M3302005195028634001",
+            "prjNo": "GC2025JC07497",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028634001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "东部新城幼托中心北侧停车场（施工）",
+            "bulletinId": "ce597e51-9517-40a0-bb41-dc93eecdd421",
+            "prjId": "M3302005195028643001",
+            "prjNo": "GC2025JC07498",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028643001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "黄山别墅河道维护服务项目",
+            "bulletinId": "a192b053-9870-4154-bc52-d64be3d01747",
+            "prjId": "M3302005195028665001",
+            "prjNo": "GC2025JC07515",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028665001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "线上二号桥APP软件开发项目（第二次）",
+            "bulletinId": "ee08ec69-0d35-4ff6-852d-7b2cc9313842",
+            "prjId": "M3302005195028680001",
+            "prjNo": "GC2025JC07545",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028680001",
+            "prjType": "信息化建设类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波市热力有限公司管道管件采购",
+            "bulletinId": "0a828eb6-740d-4f09-970f-88cd7dc4b5ee",
+            "prjId": "M3302005195028751001",
+            "prjNo": "GC2025JC07602",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028751001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波四明化工有限公司10万吨年高浓度废液资源化利用联产2亿Nm3年合成气、氢气及氢气综合利用技术改造项目变换气脱碳单元脱碳吸附塔采购项目",
+            "bulletinId": "bf182631-1ce6-4ac6-95e4-3fe3d473ca44",
+            "prjId": "M3302005195028395001",
+            "prjNo": "GC2025JC07263",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028395001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "梅山港口基础设施重点项目配套道路一期工程-数字公路",
+            "bulletinId": "03917e90-9855-42d2-a0e6-7d032ed823f8",
+            "prjId": "M3302005195028491001",
+            "prjNo": "GC2025JC07463",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028491001",
+            "prjType": "信息化建设类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "2025-“让世界看见宁波”国际传播+项目",
+            "bulletinId": "a838a8aa-3bc7-48b0-95d7-2b39bde2433f",
+            "prjId": "M3302005195028499001",
+            "prjNo": "GC2025JC07338",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028499001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "北仑颐养中心建设项目窗帘、医用帘、浴帘采购",
+            "bulletinId": "ba2a5d3f-3d43-4db0-acfd-7e4e9598c6d9",
+            "prjId": "M3302005195028633001",
+            "prjNo": "GC2025JC07496",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028633001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波明州热电有限公司2026年度110KV蔡明1397线路代运行维护技术服务/宁波明州生物质发电有限公司2026年度110KV蔡州1398线路代运行维护技术服务项目",
+            "bulletinId": "f45595cd-f0a3-450c-b841-63916d3b7d64",
+            "prjId": "M3302005195028731001",
+            "prjNo": "GC2025JC07577",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028731001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波市鄞州区五乡液化气有限公司改造工程配套配电房改造项目",
+            "bulletinId": "11555490-d278-4089-8d08-62e2fdb53459",
+            "prjId": "M3302005195028739001",
+            "prjNo": "GC2025JC07581",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028739001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波前湾新区盛世里文旅奥特莱斯2025年迎新活动艺人周蕙演出服务",
+            "bulletinId": "fe0a53f3-caeb-4dc7-ab70-ec0b926c4603",
+            "prjId": "M3302005195028758001",
+            "prjNo": "GC2025JC07627",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028758001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "G15沈海高速宁波姜山至西坞段改扩建工程给水管道移位工程安评项目",
+            "bulletinId": "092e0f47-06ef-4178-b180-1c93996ed84a",
+            "prjId": "M3302005195028766001",
+            "prjNo": "GC2025JC07616",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028766001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "钟公庙站区块绿化及河坎工程（监理）",
+            "bulletinId": "9330eed1-23c8-450f-9be8-66172b8acc8e",
+            "prjId": "M3302005195028379001",
+            "prjNo": "GC2025JC07274",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028379001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "宁波市医疗中心李惠利医院东部院区原地改扩建（检测基地与健康保健用房建设）项目病房阳台玻璃隔断采购项目",
+            "bulletinId": "bd85863f-b525-4624-a217-531fcf541757",
+            "prjId": "M3302005195028587001",
+            "prjNo": "GC2025JC07467",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028587001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "2026年和义大道购物中心消防设施、设备维保维修项目",
+            "bulletinId": "d182ae20-6f4e-4800-985c-2ba81f841c92",
+            "prjId": "M3302005195028624001",
+            "prjNo": "GC2025JC07473",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028624001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2025-12-23",
+            "prjName": "海曙保安公司工程项目设备采购及视频监控建设（二期）施工运维链路采购项目招标代理服务选取",
+            "bulletinId": "257f70b2-aed1-470a-afb3-d5aefb072c63",
+            "prjId": "M3302005195028846001",
+            "prjNo": "GC2025JC07665",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195028846001",
+            "prjType": "信息化软硬件采购类项目",
+            "prjContent": "海曙保安公司工程项目设备采购及视频监控建设（二期）施工运维链路采购项目，包括设备采购、视频监控建设和施工运维链路，共计6个标段。"
         }
     ]
 }
