@@ -1,5 +1,156 @@
 {
-    "today": "2026-01-17",
-    "future_date": "2026-01-18",
-    "projects": []
+    "today": "2026-01-18",
+    "future_date": "2026-01-19",
+    "projects": [
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "废旧物资全过程咨询评估服务",
+            "bulletinId": "63dbf7ff-eb84-4010-9b00-1e11b7708f13",
+            "prjId": "M3302005195029399001",
+            "prjNo": "GC2026JC00209",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029399001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "2026年度象山区域充电站安装及配套工程监控设备采购项目",
+            "bulletinId": "c344d34a-9cdf-48b9-bf15-c3e4a13b78ba",
+            "prjId": "M3302005195029432001",
+            "prjNo": "GC2026JC00214",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029432001",
+            "prjType": "信息化软硬件采购类项目",
+            "prjContent": "2026年度象山区域充电站安装及配套工程监控设备采购项目，框架金额20万，期限1年。采购内容包括安装及监控设备，具体清单详见采购文件。"
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "溪里方村等项目第三方审计",
+            "bulletinId": "25231307-fd4b-471c-870e-a127d1077f88",
+            "prjId": "M3302005195029454001",
+            "prjNo": "GC2026JC00216",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029454001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "宁波前湾新区城市开发建设有限公司",
+            "bulletinId": "a351ca87-d3be-4403-88f3-f5cd54acd616",
+            "prjId": "M3302005195029457001",
+            "prjNo": "GC2026JC00223",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029457001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "宁波能源集团股份有限公司 2026年度-2028年度工程造价咨询服务",
+            "bulletinId": "1c60a3da-f40e-42ae-bfbd-a136cd4cd247",
+            "prjId": "M3302005195029356001",
+            "prjNo": "GC2026JC00130",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029356001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "宁波市海曙水务环境集团有限公司下属4家子公司公款存放服务银行采购项目",
+            "bulletinId": "dca7a286-fce3-463a-83c3-99790b433bac",
+            "prjId": "M3302005195029373001",
+            "prjNo": "GC2026JC00162",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029373001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "海曙区高桥镇镇域道路雨污管网修复及管网新建补缺工程CCTV检测",
+            "bulletinId": "52c0d6e3-4181-4e6d-ad7b-bad9002e861e",
+            "prjId": "M3302005195029377001",
+            "prjNo": "GC2026JC00163",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029377001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "2026年度电动机维护保养",
+            "bulletinId": "fa6d53db-08c7-40c5-9a36-c3736f4ada43",
+            "prjId": "M3302005195029443001",
+            "prjNo": "GC2026JC00213",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029443001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "宁波市海曙区文昌街17号历史建筑活化利用项目房屋安全鉴定",
+            "bulletinId": "fdae9ade-0424-4528-a63b-00854c76e1b2",
+            "prjId": "M3302005195029226001",
+            "prjNo": "GC2026JC00173",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029226001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "万国机电商城地块改造项目（竣工财务决算编制）",
+            "bulletinId": "cc4450b0-dc47-4bd5-bff8-3640973e67b6",
+            "prjId": "M3302005195029474001",
+            "prjNo": "GC2026JC00236",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029474001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "余姚黄家埠矿泥饼清运消纳处置项目",
+            "bulletinId": "4cbbea2f-c1e3-4d42-97e5-bb0d8cb1cf62",
+            "prjId": "M3302005195029052001",
+            "prjNo": "GC2025JC07915",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029052001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "宁波市海曙高新投资控股有限公司绿植租赁服务",
+            "bulletinId": "c6bc737d-11db-4886-a233-63d10bdcbb0b",
+            "prjId": "M3302005195029461001",
+            "prjNo": "GC2026JC00230",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029461001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "某校电子班牌系统采购项目",
+            "bulletinId": "db6a0a77-7adb-427e-a9bd-ecc5e3f52540",
+            "prjId": "M3302005195029471001",
+            "prjNo": "GC2026JC00227",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029471001",
+            "prjType": "信息化软硬件采购类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "宁波市海曙区望春派出所扩建工程监理平行检测服务",
+            "bulletinId": "64ff3428-1a16-4f6e-b80a-70c1413b8f98",
+            "prjId": "M3302005195029466001",
+            "prjNo": "GC2026JC00229",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029466001",
+            "prjType": "工程类项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-01-19",
+            "prjName": "横街产业园（一期）启动项目10号地块（材料检测、室内空气环境检测及装修材料有害物质限量检测）服务采购",
+            "bulletinId": "4132eb0a-7f41-453c-8c01-988c17618396",
+            "prjId": "M3302005195029467001",
+            "prjNo": "GC2026JC00228",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029467001",
+            "prjType": "信息化服务类项目",
+            "prjContent": null
+        }
+    ]
 }
