@@ -1,5 +1,26 @@
 {
-    "today": "2026-02-22",
-    "future_date": "2026-02-23",
-    "projects": []
+    "today": "2026-02-23",
+    "future_date": "2026-02-24",
+    "projects": [
+        {
+            "kbDate": "2026-02-24",
+            "prjName": "宁波市海曙区蓝天路（迎春路-阳光路）道路工程招标代理（勘察设计）",
+            "bulletinId": "77dc0d7f-8ad9-4aa2-84a3-d461af6ce90f",
+            "prjId": "M3302005195030142001",
+            "prjNo": "GC2026JC00865",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030142001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-24",
+            "prjName": "宁波市海曙区长乐地块幼儿园项目（CL-01-07a地块）厨房设备采购及相关服务项目招标代理服务",
+            "bulletinId": "2a67f8a2-fc4f-444e-ae9b-0405d26accb8",
+            "prjId": "M3302005195030149001",
+            "prjNo": "GC2026JC00867",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030149001",
+            "prjType": "其他项目",
+            "prjContent": null
+        }
+    ]
 }
