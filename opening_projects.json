@@ -1,6 +1,6 @@
 {
-    "today": "2026-02-23",
-    "future_date": "2026-02-24",
+    "today": "2026-02-24",
+    "future_date": "2026-02-25",
     "projects": [
         {
             "kbDate": "2026-02-24",
@@ -19,6 +19,46 @@
             "prjId": "M3302005195030149001",
             "prjNo": "GC2026JC00867",
             "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030149001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-25",
+            "prjName": "宁波市海曙区西片区排水设施提质提效工程（一期）设计",
+            "bulletinId": "e8fe881b-d089-426e-a930-b5af255da620",
+            "prjId": "M3302005195030137001",
+            "prjNo": "GC2026JC00864",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030137001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-25",
+            "prjName": "停车场现场管理服务项目",
+            "bulletinId": "904e4de6-46bb-4863-ba03-613387511ac1",
+            "prjId": "M3302005195030106001",
+            "prjNo": "GC2026JC00847",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030106001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-25",
+            "prjName": "宁波商业航天科研试验发射场项目可行性研究报告编制（重发）",
+            "bulletinId": "626e5595-d245-4731-b1c8-ed0b3f46a020",
+            "prjId": "M3302005195030176001",
+            "prjNo": "GC2026JC00895",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030176001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-25",
+            "prjName": "秀水街酒店项目（机电设计顾问）",
+            "bulletinId": "c7e5cbb0-6e69-465f-90bc-e991249f1635",
+            "prjId": "M3302005195030152001",
+            "prjNo": "GC2026JC00872",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030152001",
             "prjType": "其他项目",
             "prjContent": null
         }
