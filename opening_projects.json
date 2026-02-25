@@ -1,27 +1,7 @@
 {
-    "today": "2026-02-24",
-    "future_date": "2026-02-25",
+    "today": "2026-02-25",
+    "future_date": "2026-02-26",
     "projects": [
-        {
-            "kbDate": "2026-02-24",
-            "prjName": "宁波市海曙区蓝天路（迎春路-阳光路）道路工程招标代理（勘察设计）",
-            "bulletinId": "77dc0d7f-8ad9-4aa2-84a3-d461af6ce90f",
-            "prjId": "M3302005195030142001",
-            "prjNo": "GC2026JC00865",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030142001",
-            "prjType": "其他项目",
-            "prjContent": null
-        },
-        {
-            "kbDate": "2026-02-24",
-            "prjName": "宁波市海曙区长乐地块幼儿园项目（CL-01-07a地块）厨房设备采购及相关服务项目招标代理服务",
-            "bulletinId": "2a67f8a2-fc4f-444e-ae9b-0405d26accb8",
-            "prjId": "M3302005195030149001",
-            "prjNo": "GC2026JC00867",
-            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030149001",
-            "prjType": "其他项目",
-            "prjContent": null
-        },
         {
             "kbDate": "2026-02-25",
             "prjName": "宁波市海曙区西片区排水设施提质提效工程（一期）设计",
@@ -59,6 +39,96 @@
             "prjId": "M3302005195030152001",
             "prjNo": "GC2026JC00872",
             "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030152001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-26",
+            "prjName": "特定区域监控系统运维服务采购（重招）",
+            "bulletinId": "56efe7db-0a3a-41b6-93ca-bdc05dd4e490",
+            "prjId": "M3302005195030131001",
+            "prjNo": "GC2026JC00859",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030131001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-26",
+            "prjName": "宁波市海曙月湖片区地下管网综合改造提升工程土地勘测定界",
+            "bulletinId": "8a85349b-0e8d-4f5b-be75-645476a6ceee",
+            "prjId": "M3302005195030133001",
+            "prjNo": "GC2026JC00863",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030133001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-26",
+            "prjName": "甬金衢上高速宁波段连接线郭巨至昆亭段勘察监理及设计咨询",
+            "bulletinId": "59e58c6b-b27a-4394-977e-1d4815a283ce",
+            "prjId": "M3302005195029927001",
+            "prjNo": "GC2026JC00741",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195029927001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-26",
+            "prjName": "2026年度东部新城地块电力接入工程（监理）",
+            "bulletinId": "deccd55b-5132-470f-b548-a4ef9b5ef14f",
+            "prjId": "M3302005195030066001",
+            "prjNo": "GC2026JC00820",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030066001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-26",
+            "prjName": "北仑智慧交通项目（一期）设计",
+            "bulletinId": "d42734da-1e0c-40a2-9d82-aedc9b8e62ea",
+            "prjId": "M3302005195030188001",
+            "prjNo": "GC2026JC00911",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030188001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-26",
+            "prjName": "秀水街酒店项目（节能诊断）",
+            "bulletinId": "988db788-90b7-446b-8cfd-4c5f3fa0db0a",
+            "prjId": "M3302005195030166001",
+            "prjNo": "GC2026JC00881",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030166001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-26",
+            "prjName": "秀水街酒店项目（厨房及洗衣设计顾问）",
+            "bulletinId": "b1b983d6-eb81-4746-bccc-94add302ce66",
+            "prjId": "M3302005195030171001",
+            "prjNo": "GC2026JC00884",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030171001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-26",
+            "prjName": "宁波高新区未来产业创新园（一期）总部基地东区联合测绘服务项目",
+            "bulletinId": "7ba71c96-d825-4abb-b9d8-d6d314086081",
+            "prjId": "M3302005195030104001",
+            "prjNo": "GC2026JC00856",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030104001",
+            "prjType": "其他项目",
+            "prjContent": null
+        },
+        {
+            "kbDate": "2026-02-26",
+            "prjName": "秀水街酒店项目（IT及弱电智能化设计顾问）",
+            "bulletinId": "a6b419ab-3bc1-426e-862d-1e2ce4a8c289",
+            "prjId": "M3302005195030170001",
+            "prjNo": "GC2026JC00888",
+            "prjUrl": "https://ygcg.nbcqjy.org/detail?type=1&prjId=M3302005195030170001",
             "prjType": "其他项目",
             "prjContent": null
         }
