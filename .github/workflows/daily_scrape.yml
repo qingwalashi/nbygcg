@@ -1,9 +1,9 @@
 name: Daily Data Fetcher
 
 on:
-  schedule:
+  # schedule:
     # Runs at 01:00 UTC, which is 9:00 AM in China Standard Time (UTC+8)
-    - cron: '0 1 * * *'  
+    # - cron: '0 1 * * *'  
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
